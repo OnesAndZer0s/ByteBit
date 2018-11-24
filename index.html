@@ -9,12 +9,10 @@
   <script src="blocks_compressed.js"></script>
   <script src="en.js"></script>
   <script>
-  function start() {
   startBlocklyInstance('JS', false, true, 'start');
   startBlocklyInstance('HTML', true, false, 'start'); 
   startBlocklyInstance('CSS', true, false, 'start');
-}
-
+	 
 function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
   var options = { 
 	toolbox : document.getElementById('blockly'+suffix), 
