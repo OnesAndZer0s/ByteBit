@@ -145,7 +145,7 @@ function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
       <a class="dropbtn" onclick="show('saveDrop')">Save..</button>
       <a class="dropbtn" onclick="show('loadDrop')">Load..</button>
       <a class="dropbtn" onclick="show('exportDrop')">Export..</button>
-      <a onclick="">Library</a>
+      <a onclick="newPage('library')">Library</a>
       </div>
       <div class="dropdown-content" id="saveDrop">
       <a onclick="">Computer</a>
@@ -255,6 +255,7 @@ function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
   <span>Workspace Color : </span><input type="color" value="#ff0000"><br>
   <span>Toolbox Color : </span><input type="color" value="#ff0000"><br>
   </div>
+  <div class="library page" style="">LIBRARY</div>
 </body>
 <script>
   function newPage(clss) {
