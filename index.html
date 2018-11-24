@@ -65,7 +65,7 @@ function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
   height: 100%;
   left: 0px;
   top: 0px;
-  z-index: 2;
+  z-index: 0;
 }
 
 .navbar {
@@ -261,7 +261,7 @@ function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
 for (var i = 0; i < document.getElementsByClassName('page').length; i++) {
 document.getElementsByClassName('page')[i].style.zInedex = '0';
 }
-document.getElementsByClassName(clss)[0].style.zIndex = '1';
+document.getElementsByClassName(clss)[0].style.zIndex = '3';
 }
   
 function show(id) {
