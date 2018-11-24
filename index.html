@@ -179,17 +179,7 @@ var options = {
 		scaleSpeed : 1.2
 	}
 };
-
-/* Inject your workspace */ 
-var workspace = Blockly.inject(/* TODO: Add ID of div to inject Blockly into */, options);
-
-/* Load Workspace Blocks from XML to workspace. Remove all code below if no blocks to load */
-
-/* TODO: Change workspace blocks XML ID if necessary. Can export workspace blocks XML from Workspace Factory. */
-var workspaceBlocks = document.getElementById("workspaceBlocks"); 
-
-/* Load blocks to workspace. */
-Blockly.Xml.domToWorkspace(workspaceBlocks, workspace);
+var workspace = Blockly.inject('javascript', options);
 </script>
   </div>
   <div class="html page" style="display:none;">HTML BLOCKLY</div>
