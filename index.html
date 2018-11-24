@@ -42,7 +42,7 @@ function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
 	}
 };
   document.getElementById('blockly' + suffix).style.width = window.innerWidth+'px';
-  document.getElementById('blockly' + suffix).style.height = window.innerWidth-47+'px';
+  document.getElementById('blockly' + suffix).style.height = window.innerHeight+'px';
   return Blockly.inject('blockly' + suffix, options);
 }
  </script>
