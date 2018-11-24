@@ -143,13 +143,13 @@
   </div>
   
   <div class="javascript page" style="display:block;padding:0px 0px;">
-  <div id="javascriptBlockly" style="position: absolute;left: 0px;top: 0px;"></div>
-  <xml id="toolbox" style="display:none">
+  <div id="jsBlockly" style="position: absolute;left: 0px;top: 0px;"></div>
+  <xml id="jsToolbox" style="display:none">
   <block type="controls_if"></block>
 </xml>
 <script>
 var options = { 
-	toolbox : document.getElementById("toolbox"), 
+	toolbox : document.getElementById("jsToolbox"), 
 	collapse : true, 
 	comments : true, 
 	disable : true, 
@@ -179,8 +179,8 @@ var options = {
 	}
 };
   var blocklyArea = document.getElementsByClassName('javascript')[0];
-  var blocklyDiv = document.getElementById('javascriptBlockly');
-  var javascriptWorkspace = Blockly.inject(blocklyDiv,options);
+  var blocklyDiv = document.getElementById('jsBlockly');
+  var jsWorkspace = Blockly.inject(blocklyDiv,options);
   var onresize = function(e) {
     // Compute the absolute coordinates and dimensions of blocklyArea.
     var element = blocklyArea;
@@ -196,21 +196,21 @@ var options = {
     blocklyDiv.style.top = y - blocklyArea.offsetTop + 'px';
     blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
     blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
-    Blockly.svgResize(javascriptWorkspace);
+    Blockly.svgResize(jsWorkspace);
   };
   window.addEventListener('resize', onresize, false);
   onresize();
-  Blockly.svgResize(javascriptWorkspace);
+  Blockly.svgResize(jsWorkspace);
 </script>
   </div>
   <div class="html page" style="display:none;">
  <div id="HTMLBlockly" style="position: absolute;left: 0px;top: 0px;"></div>
-  <xml id="toolbox" style="display:none">
+  <xml id="HTMLToolbox" style="display:none">
   <block type="controls_not"></block>
 </xml>
 <script>
 var options = { 
-	toolbox : document.getElementById("toolbox"), 
+	toolbox : document.getElementById("HTMLToolbox"), 
 	collapse : true, 
 	comments : true, 
 	disable : true, 
