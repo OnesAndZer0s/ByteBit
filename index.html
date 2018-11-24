@@ -140,7 +140,7 @@
   </div>
   
   <div class="javascript page" style="display:block;padding:0px 0px;">
-  <div id="javascriptBlockly" style="position: absolute;"></div>
+  <div id="javascriptBlockly" style="position: absolute;left: 0px;top: 0px;"></div>
   <xml id="toolbox" style="display:none">
   <block type="controls_if"></block>
 </xml>
@@ -175,9 +175,7 @@ var options = {
 		scaleSpeed : 1.2
 	}
 };
-  var blocklyArea = document.getElementsByClassName('javascript')[0];
-  var blocklyDiv = document.getElementById('javascriptBlockly');
-  var workspace = Blockly.inject(blocklyDiv,options);
+  var workspace = Blockly.inject(document.getElementById('javascriptBlockly'),options);
 </script>
   </div>
   <div class="html page" style="display:none;">HTML BLOCKLY</div>
