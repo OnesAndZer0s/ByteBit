@@ -42,7 +42,6 @@ function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
 	}
 };
   resizeBlockly(suffix);
-  document.getElementsByClassName(suffix)[0].onresize = resizeBlockly(suffix);
   return Blockly.inject('blockly' + suffix, options);
 }
 function resizeBlockly(suffix) {
@@ -191,7 +190,7 @@ opacity: 1;
   <a onclick="alert('test')" style="float:right;">Run</a>
   </div>
   
-  <div class="JS page" style="padding:0px 0px;z-index:3;">
+  <div class="JS page" style="padding:0px 0px;z-index:3;" onresize="resizeBlockly('JS')">
   <div id="blocklyJS" style="position: absolute;left: 0px;top: 0px;width:1000px;height:500px;"></div>
   <xml id="toolboxJS" style="display:none">
     <category name="Events" colour="#a55b5b"></category>
@@ -205,13 +204,13 @@ opacity: 1;
     <category name="Functions" colour="#9A5CA6" custom="PROCEDURE"></category>
   </xml>
   </div>
-  <div class="HTML page" style="padding:0px 0px;">
+  <div class="HTML page" style="padding:0px 0px;" onresize="resizeBlockly('HTML')">
  <div id="blocklyHTML" style="position: absolute;left: 0px;top: 0px;width:1000px;height:500px;"></div>
   <xml id="toolboxHTML" style="display:none">
   <block type="controls_if"></block>
 </xml>
 </div>
-  <div class="CSS page" style="padding:0px 0px;">
+  <div class="CSS page" style="padding:0px 0px;" onresize="resizeBlockly('CSS')">
  <div id="blocklyCSS" style="position: absolute;left: 0px;top: 0px;width:1000px;height:500px;"></div>
   <xml id="toolboxCSS" style="display:none">
   <block type="controls_if"></block>
