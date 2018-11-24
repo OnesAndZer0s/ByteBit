@@ -72,14 +72,13 @@ function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
     padding-right: 32px;
     position: absolute;
     left: 0px;
-    top: 0px;
+    top: -46px;
     z-index: 10;
-    transition: opacity 1s;
-    opacity: 0;
+    transition: top 1s;
 }
 
 .navbar:hover {
-opacity: 1;
+top: 0px;
 }
 
 .navbar a{
