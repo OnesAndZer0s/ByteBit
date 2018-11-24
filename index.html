@@ -42,7 +42,7 @@ function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
 	}
 };
   resizeBlockly(suffix);
-  document.getElementById('blockly' + suffix).parentElement.onresize = resizeBlockly(suffix);
+  window.onresize = resizeBlockly(suffix);
   return Blockly.inject('blockly' + suffix, options);
 }
 function resizeBlockly(suffix) {
