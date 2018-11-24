@@ -42,7 +42,7 @@ function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
 };
   document.getElementById('blockly' + suffix).style.width = window.innerWidth+'px';
   document.getElementById('blockly' + suffix).style.height = window.innerWidth-47+'px';
-  Blockly.inject('blockly' + suffix, options);
+  return Blockly.inject('blockly' + suffix, options);
 }
  </script>
   <style>
@@ -277,9 +277,10 @@ window.onclick = function(e) {
       }
   }
 }
-  startBlocklyInstance('JS', false, true, 'start');
-  startBlocklyInstance('HTML', true, false, 'start'); 
-  startBlocklyInstance('CSS', true, false, 'start');
+  var JSBlockly = startBlocklyInstance('JS', false, true, 'start');
+  var HTMLBlockly =  startBlocklyInstance('HTML', true, false, 'start'); 
+  var CSSBlockly =  startBlocklyInstance('CSS', true, false, 'start');
+ alert(JSBlockly + HTMLBlockly + CSSBlockly)
 </script>
   </body>
 </html>
