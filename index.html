@@ -180,7 +180,7 @@ var options = {
 };
   var blocklyArea = document.getElementsByClassName('javascript')[0];
   var blocklyDiv = document.getElementById('javascriptBlockly');
-  var workspace = Blockly.inject(blocklyDiv,options);
+  var javascriptWorkspace = Blockly.inject(blocklyDiv,options);
   var onresize = function(e) {
     // Compute the absolute coordinates and dimensions of blocklyArea.
     var element = blocklyArea;
@@ -196,14 +196,74 @@ var options = {
     blocklyDiv.style.top = y - blocklyArea.offsetTop + 'px';
     blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
     blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
-    Blockly.svgResize(workspace);
+    Blockly.svgResize(javascriptWorkspace);
   };
   window.addEventListener('resize', onresize, false);
   onresize();
-  Blockly.svgResize(workspace);
+  Blockly.svgResize(javascriptWorkspace);
 </script>
   </div>
-  <div class="html page" style="display:none;">HTML BLOCKLY</div>
+  <div class="html page" style="display:none;">
+ <div id="HTMLBlockly" style="position: absolute;left: 0px;top: 0px;"></div>
+  <xml id="toolbox" style="display:none">
+  <block type="controls_not"></block>
+</xml>
+<script>
+var options = { 
+	toolbox : document.getElementById("toolbox"), 
+	collapse : true, 
+	comments : true, 
+	disable : true, 
+	maxBlocks : Infinity, 
+	trashcan : true, 
+	horizontalLayout : false, 
+	toolboxPosition : 'start', 
+	css : true, 
+	media : 'https://blockly-demo.appspot.com/static/media/', 
+	rtl : false, 
+	scrollbars : true, 
+	sounds : true, 
+	oneBasedIndex : true, 
+	grid : {
+		spacing : 20, 
+		length : 1, 
+		colour : '#888', 
+		snap : false
+	}, 
+	zoom : {
+		controls : true, 
+		wheel : false, 
+		startScale : 1, 
+		maxScale : 1.5, 
+		minScale : 0.2, 
+		scaleSpeed : 1.2
+	}
+};
+  var blocklyArea = document.getElementsByClassName('html')[0];
+  var blocklyDiv = document.getElementById('HTMLBlockly');
+  var HTMLWorkspace = Blockly.inject(blocklyDiv,options);
+  var onresize = function(e) {
+    // Compute the absolute coordinates and dimensions of blocklyArea.
+    var element = blocklyArea;
+    var x = 0;
+    var y = 0;
+    do {
+      x += element.offsetLeft;
+      y += element.offsetTop;
+      element = element.offsetParent;
+    } while (element);
+    // Position blocklyDiv over blocklyArea.
+    blocklyDiv.style.left = x - blocklyArea.offsetLeft + 'px';
+    blocklyDiv.style.top = y - blocklyArea.offsetTop + 'px';
+    blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
+    blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
+    Blockly.svgResize(HTMLWorkspace);
+  };
+  window.addEventListener('resize', onresize, false);
+  onresize();
+  Blockly.svgResize(HTMLWorkspace);
+</script>
+</div>
   <div class="css page" style="display:none;">CSS BLOCKLY</div>
   <div class="media page" style="display:none;">MEDIA FILES</div>
   <div class="blockedit page" style="display:none;">BLOCK EDITOR</div>
