@@ -42,9 +42,6 @@ function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
 };
   Blockly.inject('blockly' + suffix, options);
 }
-  startBlocklyInstance('JS', false, true, 'start');
-  startBlocklyInstance('HTML', true, false, 'start'); 
-  startBlocklyInstance('CSS', true, false, 'start');
  </script>
   <style>
   body {
@@ -278,6 +275,9 @@ window.onclick = function(e) {
       }
   }
 }
+  startBlocklyInstance('JS', false, true, 'start');
+  startBlocklyInstance('HTML', true, false, 'start'); 
+  startBlocklyInstance('CSS', true, false, 'start');
 </script>
   </body>
 </html>
