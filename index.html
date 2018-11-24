@@ -259,9 +259,9 @@ function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
 <script>
   function newPage(clss) {
 for (var i = 0; i < document.getElementsByClassName('page').length; i++) {
-document.getElementsByClassName('page')[i].style.display = 'none';
+document.getElementsByClassName('page')[i].style.zInedex = '0';
 }
-document.getElementsByClassName(clss)[0].style.display = 'block';
+document.getElementsByClassName(clss)[0].style.zIndex = '1';
 }
   
 function show(id) {
