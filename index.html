@@ -190,8 +190,8 @@ var options = {
       element = element.offsetParent;
     } while (element);
     // Position blocklyDiv over blocklyArea.
-    blocklyDiv.style.left = x + 'px';
-    blocklyDiv.style.top = y + 'px';
+    blocklyDiv.style.left = x - element.offsetLeft + 'px';
+    blocklyDiv.style.top = y - element.offsetTop + 'px';
     blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
     blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
     Blockly.svgResize(workspace);
