@@ -40,6 +40,8 @@ function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
 		scaleSpeed : 1.2
 	}
 };
+  document.getElementById('blockly' + suffix).style.width = window.innerWidth+'px';
+  document.getElementById('blockly' + suffix).style.height = window.innerWidth-47+'px';
   Blockly.inject('blockly' + suffix, options);
 }
  </script>
