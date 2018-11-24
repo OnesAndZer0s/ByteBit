@@ -11,7 +11,8 @@
   <script>
   function start() {
   startBlocklyInstance('JS', false, true, 'start');
-  startBlocklyInstance('HTML', true, false, 'start');
+  startBlocklyInstance('HTML', true, false, 'start'); 
+  startBlocklyInstance('CSS', true, false, 'start');
 }
 
 function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
@@ -183,18 +184,23 @@ function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
   </div>
   
   <div class="javascript page" style="display:block;padding:0px 0px;">
-  <div id="blocklyJS" style="position: absolute;left: 0px;top: 0px;"></div>
+  <div id="blocklyJS" style="position: absolute;left: 0px;top: 0px;width:1000px;height:500px;"></div>
   <xml id="toolboxJS" style="display:none">
   <block type="controls_if"></block>
 </xml>
   </div>
-  <div class="html page" style="display:none;">
- <div id="blocklyHTML" style="position: absolute;left: 0px;top: 0px;"></div>
+  <div class="html page" style="display:none;padding:0px 0px;">
+ <div id="blocklyHTML" style="position: absolute;left: 0px;top: 0px;width:1000px;height:500px;"></div>
   <xml id="toolboxHTML" style="display:none">
   <block type="controls_if"></block>
 </xml>
 </div>
-  <div class="css page" style="display:none;">CSS BLOCKLY</div>
+  <div class="css page" style="display:none;padding:0px 0px;">
+ <div id="blocklyCSS" style="position: absolute;left: 0px;top: 0px;width:1000px;height:500px;"></div>
+  <xml id="toolboxCSS" style="display:none">
+  <block type="controls_if"></block>
+</xml>
+</div>
   <div class="media page" style="display:none;">MEDIA FILES</div>
   <div class="blockedit page" style="display:none;">BLOCK EDITOR</div>
   <div class="tooledit page" style="display:none;">TOOLBOX EDITOR</div>
