@@ -141,7 +141,7 @@
   <a onclick="newPage('setting')">Settings</a>
   </div>
   
-  <div class="javascript page" style="display:block;">
+  <div class="javascript page" id="javascriptBlockly"style="display:block;">
   <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
   <xml id="toolbox" style="display:none">
   <block type="controls_if"></block>
@@ -179,7 +179,7 @@ var options = {
 		scaleSpeed : 1.2
 	}
 };
-var workspace = Blockly.inject('blocklyDiv', options);
+var workspace = Blockly.inject('javascriptBlockly', options);
 </script>
   </div>
   <div class="html page" style="display:none;">HTML BLOCKLY</div>
