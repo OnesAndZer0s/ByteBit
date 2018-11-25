@@ -44,9 +44,13 @@ function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
   resizeBlockly(suffix);
   return Blockly.inject('blockly' + suffix, options);
 }
-function resizeBlockly(suffix) {
-  document.getElementById('blockly' + suffix).style.width = window.innerWidth +'px';
-  document.getElementById('blockly' + suffix).style.height = window.innerHeight +'px';
+function resizeBlockly() {
+  document.getElementById('blocklyJS').style.width = window.innerWidth +'px';
+  document.getElementById('blocklyJS').style.height = window.innerHeight +'px';
+  document.getElementById('blocklyJHTML').style.width = window.innerWidth +'px';
+  document.getElementById('blocklyHTML').style.height = window.innerHeight +'px';
+  document.getElementById('blocklyCSS').style.width = window.innerWidth +'px';
+  document.getElementById('blocklyCSS').style.height = window.innerHeight +'px';
 }
  </script>
   <style>
@@ -143,7 +147,7 @@ opacity: 1;
 }
 </style>
   </head>
-<body>
+<body onresize="resizeBlockly()">
 <div class="navbar">
  <div class="dropdown">
   <button class="dropbtn" onclick="show('fileDrop')">Files</button>
@@ -190,7 +194,7 @@ opacity: 1;
   <a onclick="alert('test')" style="float:right;">Run</a>
   </div>
   
-  <div class="JS page" style="padding:0px 0px;z-index:3;" onresize="resizeBlockly('JS')">
+  <div class="JS page" style="padding:0px 0px;z-index:3;">
   <div id="blocklyJS" style="position: absolute;left: 0px;top: 0px;width:1000px;height:500px;"></div>
   <xml id="toolboxJS" style="display:none">
     <category name="Events" colour="#cc9900"></category>
@@ -205,13 +209,13 @@ opacity: 1;
     <category name="Functions" colour="#660066" custom="PROCEDURE"></category>
   </xml>
   </div>
-  <div class="HTML page" style="padding:0px 0px;" onresize="resizeBlockly('HTML')">
+  <div class="HTML page" style="padding:0px 0px;">
  <div id="blocklyHTML" style="position: absolute;left: 0px;top: 0px;width:1000px;height:500px;"></div>
   <xml id="toolboxHTML" style="display:none">
   <block type="controls_if"></block>
 </xml>
 </div>
-  <div class="CSS page" style="padding:0px 0px;" onresize="resizeBlockly('CSS')">
+  <div class="CSS page" style="padding:0px 0px;">
  <div id="blocklyCSS" style="position: absolute;left: 0px;top: 0px;width:1000px;height:500px;"></div>
   <xml id="toolboxCSS" style="display:none">
   <block type="controls_if"></block>
