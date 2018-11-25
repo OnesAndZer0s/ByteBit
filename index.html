@@ -8,6 +8,7 @@
   <script src="blockly_compressed.js"></script>
   <script src="blocks_compressed.js"></script>
   <script src="javascript_compressed.js"></script>
+  <script src="control_blocks.js"></script>
   <script src="en.js"></script>
   <script>
 function startBlocklyInstance(suffix, rtl, horizontalLayout, position) {
@@ -197,7 +198,9 @@ opacity: 1;
   <div class="JS page" style="padding:0px 0px;z-index:3;">
   <div id="blocklyJS" style="position: absolute;left: 0px;top: 0px;width:1000px;height:500px;"></div>
   <xml id="toolboxJS" style="display:none">
-    <category name="Events" colour="#cc9900"></category>
+    <category name="Events" colour="#cc9900">
+	  <block type="event_on_event"></block>
+    </category>
     <category name="Control" colour="#e6e600"></category>
     <category name="Info" colour="#00ccff"></category>
     <category name="Looks" colour="#9900ff"></category>
