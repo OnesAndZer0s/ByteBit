@@ -1,4 +1,4 @@
-Blockly.Blocks['event_on_event'] = {
+Blockly.Blocks['mutation_test'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("on")
@@ -9,9 +9,9 @@ Blockly.Blocks['event_on_event'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['event_on_event'] = function(block) {
+Blockly.JavaScript['mutation_test'] = function(block) {
   var dropdown_event = block.getFieldValue('EVENT');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'test';
+  var code = 'alert(' + dropdown_event + ');';
   return code;
 };
