@@ -18,15 +18,15 @@ Blockly.JavaScript['mutation_test'] = function(block) {
 };
 var mut =  mutationToDom: function(a) {
     mutationToDom: function(a) {
-alert('mtd');
+console.log('mutationToDom');
     },
     domToMutation: function(a) {
-alert('dtm');
+console.log('domToMutation');
     },
     decompose: function(a) {
-alert('de');
+console.log('decompose');
     },
     compose: function(a) {
-alert('co'); 
+console.log('compose'); 
     };
 Blockly.Extensions.registerMutator('mutation', mut);
