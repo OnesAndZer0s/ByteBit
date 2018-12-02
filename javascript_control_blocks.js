@@ -16,10 +16,6 @@ Blockly.JavaScript['mutation_test'] = function(block) {
   var code = 'alert(' + dropdown_event + ');';
   return code;
 };
-Blockly.Extensions.registerMutator('mute',
-    test1,
-    test2);
-
 var test1 = {
   /**
    * Create XML to represent whether the 'divisorInput' should be present.
@@ -66,3 +62,8 @@ var test2 = function() {
     this.sourceBlock_.updateShape_(divisorInput);
   });
 };
+
+Blockly.Extensions.registerMutator('mute',
+    test1,
+    test2);
+
