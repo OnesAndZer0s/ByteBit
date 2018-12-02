@@ -17,6 +17,7 @@ Blockly.JavaScript['mutation_test'] = function(block) {
   return code;
 };
 var mut =  mutationToDom: function(a) {
+    mutationToDom: function(a) {
 alert('mtd');
     },
     domToMutation: function(a) {
