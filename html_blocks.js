@@ -11,7 +11,7 @@ Blockly.Blocks['html_comment'] = {
 
 Blockly.JavaScript['html_comment'] = function(block) {
   var text_comment = block.getFieldValue('COMMENT');
-  var code = '<!--' + text_comment + ‘-->’;
+  var code = '<!--' + text_comment + '-->';
   return code;
 };
 
