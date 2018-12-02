@@ -16,5 +16,5 @@ Blockly.JavaScript['mutation_test'] = function(block) {
   var code = 'alert(' + dropdown_event + ');';
   return code;
 };
-var mut = "mutationToDom: function(a) {console.log('mutationToDom');},domToMutation: function(a) {console.log('domToMutation');},decompose: function(a) {console.log('decompose');},compose: function(a) {console.log('compose'); }"
+var mut = "mutationToDom: function(a) {console.log('mutationToDom');}, domToMutation: function(a) {console.log('domToMutation');}, decompose: function(a) {console.log('decompose');}, compose: function(a) {console.log('compose'); }"
 Blockly.Extensions.registerMutator('mutation', mut);
