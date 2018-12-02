@@ -17,10 +17,10 @@ Blockly.JavaScript['mutation_test'] = function(block) {
   return code;
 };
 Blockly.Extensions.registerMutator('mute',
-    Blockly.Constants.Math.MUTATOR_MIXIN,
-    Blockly.Constants.Math.MUTATOR_EXTENSION);
+    test1,
+    test2);
 
-Blockly.Constants.Math.MUTATOR_MIXIN = {
+var test1 = {
   /**
    * Create XML to represent whether the 'divisorInput' should be present.
    * @return {Element} XML storage element.
@@ -60,7 +60,7 @@ Blockly.Constants.Math.MUTATOR_MIXIN = {
     }
   }
 };
-Blockly.Constants.Math.MUTATOR_EXTENSION = function() {
+var test2 = function() {
   this.getField('PROPERTY').setValidator(function(option) {
     var divisorInput = (option == 'DIVISIBLE_BY');
     this.sourceBlock_.updateShape_(divisorInput);
