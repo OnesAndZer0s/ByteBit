@@ -45,9 +45,7 @@ var test2 = function() {
   });
 };
 
-Blockly.Extensions.registerMutator('test_mutator',
-    test1,
-    test2);
+Blockly.Extensions.registerMutator('test_mutator',test1,null,['controls_if_elseif','controls_if_else']);
 
 Blockly.Blocks['mutation_test'] = {
   init: function() {
