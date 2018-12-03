@@ -28,7 +28,7 @@ Blockly.JavaScript['mutation_test'] = function(block) {
   return code;
 };
 
-Blockly.Constants.Logic.CONTROLS_TEST_MUTATOR_MIXIN = {
+var ver = {
   elseifCount_: 0,
   elseCount_: 0,
 
@@ -85,5 +85,5 @@ Blockly.Constants.Logic.CONTROLS_TEST_MUTATOR_MIXIN = {
   }
     
 Blockly.Extensions.registerMutator('controls_test_mutator',
-    Blockly.Constants.Logic.CONTROLS_TEST_MUTATOR_MIXIN, null,
+    ver, null,
     ['controls_if_elseif', 'controls_if_else', 'controls_if_elseif']);
