@@ -175,7 +175,8 @@ Blockly.Constants.Logic.CONTROLS_TEST_MUTATOR_MIXIN = {
       this.appendStatementInput('ELSE')
           .appendField(Blockly.Msg['CONTROLS_IF_MSG_ELSE']);
     }
-  };
+  }
+};
 
 Blockly.Extensions.registerMutator('controls_test_mutator',
     Blockly.Constants.Logic.CONTROLS_TEST_MUTATOR_MIXIN, null,
