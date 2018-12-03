@@ -28,11 +28,7 @@ Blockly.JavaScript['mutation_test'] = function(block) {
   return code;
 };
 
-Blockly.Extensions.registerMutator('controls_test_mutator',
-    ver, null,
-    ['controls_if_elseif', 'controls_if_else', 'controls_if_elseif']);
-
-var ver = {
+Blockly.Constants.Logic.CONTROLS_TEST_MUTATOR_MIXIN = {
   elseifCount_: 0,
   elseCount_: 0,
 
@@ -86,4 +82,8 @@ var ver = {
       connection.connect(elseBlock.previousConnection);
     }
     return containerBlock;
-  } }
+  } };
+
+Blockly.Extensions.registerMutator('controls_test_mutator',
+    Blockly.Constants.Logic.CONTROLS_TEST_MUTATOR_MIXIN, null,
+    ['controls_if_elseif', 'controls_if_else', 'controls_if_elseif']);
