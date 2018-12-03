@@ -180,4 +180,4 @@ Blockly.Constants.Logic.CONTROLS_TEST_MUTATOR_MIXIN = {
 
 Blockly.Extensions.registerMutator('controls_test_mutator',
     Blockly.Constants.Logic.CONTROLS_TEST_MUTATOR_MIXIN, null,
-    ['controls_if_elseif', 'controls_if_else', 'controls_if_elseif']);
+    ['controls_if_elseif','controls_if_elseif','controls_if_elseif','controls_if_elseif','controls_if_elseif', 'controls_if_else', 'controls_if_elseif']);
