@@ -28,6 +28,10 @@ Blockly.JavaScript['mutation_test'] = function(block) {
   return code;
 };
 
+Blockly.Extensions.registerMutator('controls_test_mutator',
+    ver, null,
+    ['controls_if_elseif', 'controls_if_else', 'controls_if_elseif']);
+
 var ver = {
   elseifCount_: 0,
   elseCount_: 0,
@@ -83,7 +87,3 @@ var ver = {
     }
     return containerBlock;
   }
-    
-Blockly.Extensions.registerMutator('controls_test_mutator',
-    ver, null,
-    ['controls_if_elseif', 'controls_if_else', 'controls_if_elseif']);
