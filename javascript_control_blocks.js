@@ -20,7 +20,7 @@ Blockly.defineBlocksWithJsonArray([
     "nextStatement": null,
     "colour": "%{BKY_LOGIC_HUE}",
     "helpUrl": "%{BKY_CONTROLS_IF_HELPURL}",
-    "mutator": "controls_what_mutator",
+    "mutator": "controls_test_mutator",
     "extensions": ["controls_if_tooltip"]
   }]);
 Blockly.JavaScript['mutation_test'] = function(block) {
@@ -84,6 +84,6 @@ Blockly.Constants.Logic.CONTROLS_TEST_MUTATOR_MIXIN = {
     return containerBlock;
   }
     
-Blockly.Extensions.registerMutator('controls_what_mutator',
-    Blockly.Constants.Logic.CONTROLS_WHAT_MUTATOR_MIXIN, null,
+Blockly.Extensions.registerMutator('controls_test_mutator',
+    Blockly.Constants.Logic.CONTROLS_TEST_MUTATOR_MIXIN, null,
     ['controls_if_elseif', 'controls_if_else', 'controls_if_elseif']);
