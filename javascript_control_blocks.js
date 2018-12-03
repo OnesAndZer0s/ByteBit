@@ -23,7 +23,7 @@ Blockly.defineBlocksWithJsonArray([
     "mutator": "controls_what_mutator",
     "extensions": ["controls_if_tooltip"]
   }]);
-Blockly.JavaScript['mutation_test'] = function(block) 
+Blockly.JavaScript['mutation_test'] = function(block) {
   var code = 'alert(' + 'test' + ');';
   return code;
 };
