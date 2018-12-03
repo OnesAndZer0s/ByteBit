@@ -82,7 +82,7 @@ Blockly.Constants.Logic.CONTROLS_TEST_MUTATOR_MIXIN = {
       connection.connect(elseBlock.previousConnection);
     }
     return containerBlock;
-  };
+  }
     
 Blockly.Extensions.registerMutator('controls_what_mutator',
     Blockly.Constants.Logic.CONTROLS_WHAT_MUTATOR_MIXIN, null,
