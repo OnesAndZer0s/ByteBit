@@ -279,12 +279,13 @@ Blockly.defineBlocksWithJsonArray([
   "helpUrl": ""
 },
 {
-  "type": "\_input_field",
+  "type": "date_input_field",
   "message0": "date %1 , %2",
   "args0": [
     {
       "type": "field_date",
-      "name": "DATE"
+      "name": "DATE",
+      "date": "2020-02-20"
     }, 
     {
       "type": "field_input",
