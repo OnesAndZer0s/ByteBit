@@ -283,7 +283,7 @@ Blockly.defineBlocksWithJsonArray([
   "message0": "date %1 , %2",
   "args0": [
     {
-      "type": "fied_date",
+      "type": "field_date",
       "name": "DATE"
     }, 
     {
