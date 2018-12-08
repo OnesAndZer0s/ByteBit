@@ -1,3 +1,4 @@
+goog.require('Blockly.FieldDate');
 Blockly.defineBlocksWithJsonArray([
   {
   "type": "block_creator",
@@ -278,9 +279,13 @@ Blockly.defineBlocksWithJsonArray([
   "helpUrl": ""
 },
 {
-  "type": "date_input_field",
-  "message0": "date DATEBLOCKHERE , %1",
+  "type": "\_input_field",
+  "message0": "date %1  %2"
   "args0": [
+    {
+      "type": "fied_date",
+      "name": "DATE"
+    }, 
     {
       "type": "field_input",
       "name": "NAME",
