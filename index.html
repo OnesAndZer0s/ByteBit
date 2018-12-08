@@ -374,6 +374,11 @@ window.onclick = function(e) {
   var HTMLBlockly =  startBlocklyInstance('HTML', true, false, 'start'); 
   var CSSBlockly =  startBlocklyInstance('CSS', true, false, 'start');
   var editorBlockly =  startBlocklyInstance('Editor', true, false, 'start');
+  var main = editorBlockly.newBlock('block_creator');
+  main.initSvg();
+  main.render();
+  main.setDeletable(false);
+  main.setMovable(false);
 </script>
   </body>
 </html>
