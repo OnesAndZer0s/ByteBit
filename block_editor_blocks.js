@@ -1,4 +1,5 @@
-[{
+Blockly.defineBlocksWithJsonArray([
+  {
   "type": "block_creator",
   "message0": "name %1 %2 inputs MENUMUTATOR %3 %4 inputs %5 %6 DROPDOWNMUTATION %7 tooltip %8 help url %9 color %10 mutator %11",
   "args0": [
