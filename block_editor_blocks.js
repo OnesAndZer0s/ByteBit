@@ -1,3 +1,4 @@
+goog.require('Blockly.FieldDate')
 Blockly.defineBlocksWithJsonArray([
   {
   "type": "block_creator",
@@ -234,6 +235,28 @@ Blockly.defineBlocksWithJsonArray([
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
+},
+{
+  "type": "date_input_field",
+  "message0": "date %1 , %2",
+  "args0": [
+    {
+      "type": "field_date",
+      "name": "DATE",
+      "date": "2020-02-20"
+    }, 
+    {
+      "type": "field_input",
+      "name": "NAME",
+      "text": "NAME"
+    }
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "goog.require('Blockly.FieldDate')",
+  "helpUrl": "https://developers.google.com/blockly/guides/create-custom-blocks/define-blocks#date_field"
 },
 {
   "type": "checkbox_field",
