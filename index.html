@@ -53,6 +53,8 @@ function resizeBlockly() {
   document.getElementById('blocklyHTML').style.height = window.innerHeight +'px';
   document.getElementById('blocklyCSS').style.width = window.innerWidth +'px';
   document.getElementById('blocklyCSS').style.height = window.innerHeight +'px';
+  document.getElementById('blocklyEditor').style.width = window.innerWidth +'px';
+  document.getElementById('blocklyEditor').style.height = window.innerHeight +'px';
 }
  </script>
   <style>
@@ -226,7 +228,12 @@ opacity: 1;
 </xml>
 </div>
   <div class="media page" style="">MEDIA FILES</div>
-  <div class="blockedit page" style="">BLOCK EDITOR</div>
+  <div class="Editor page" style="">
+     <div id="blocklyEditor" style="position: absolute;left: 0px;top: 0px;width:1000px;height:500px;"></div>
+  <xml id="toolboxEditor" style="display:none">
+  <block type="controls_if"></block>
+  </xml>
+  </div>
   <div class="tooledit page" style="">TOOLBOX EDITOR</div>
   <div class="debug page" style="">
   <span>Oddly Specific Preferences : </span><br>
