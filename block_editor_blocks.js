@@ -78,6 +78,7 @@ Blockly.defineBlocksWithJsonArray([
     {
       "type": "input_value",
       "name": "COLOR"
+      "check": "color"
     },
     {
       "type": "input_value",
@@ -458,7 +459,7 @@ Blockly.defineBlocksWithJsonArray([
       "max": 255
     }
   ],
-  "output": null,
+  "output": "color",
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
@@ -473,7 +474,7 @@ Blockly.defineBlocksWithJsonArray([
       "text": ""
     }
   ],
-  "output": null,
+  "output": "color",
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
@@ -504,7 +505,7 @@ Blockly.defineBlocksWithJsonArray([
       "max": 100
     }
   ],
-  "output": null,
+  "output": "color",
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
