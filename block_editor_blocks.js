@@ -77,7 +77,7 @@ Blockly.defineBlocksWithJsonArray([
     },
     {
       "type": "input_value",
-      "name": "COLOR"
+      "name": "COLOR",
       "check": "color"
     },
     {
