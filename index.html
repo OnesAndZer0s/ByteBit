@@ -231,7 +231,67 @@ opacity: 1;
   <div class="Editor page" style="">
      <div id="blocklyEditor" style="position: absolute;left: 0px;top: 0px;width:1000px;height:500px;"></div>
   <xml id="toolboxEditor" style="display:none">
-  <block type="controls_if"></block>
+   <category name="Field">
+    <block type="text_field">
+      <field name="TEXT">text</field>
+      <field name="CLASS">CLASS</field>
+    </block>
+    <block type="text_input_field">
+      <field name="default">default</field>
+      <field name="name">NAME</field>
+      <field name="SPELLCHECK">TRUE</field>
+    </block>
+    <block type="number_input_field">
+      <field name="NUMBER">0</field>
+      <field name="NAME">NAME</field>
+      <field name="MIN">0</field>
+      <field name="MAX">0</field>
+      <field name="PRECISION">0</field>
+    </block>
+    <block type="angle_input_field">
+      <field name="ANGLE">90</field>
+      <field name="NAME">NAME</field>
+    </block>
+    <block type="color_picker_field">
+      <field name="COLOR">#ff0000</field>
+      <field name="NAME">NAME</field>
+    </block>
+    <block type="dropdown_list_field">
+      <field name="NAME">NAME</field>
+    </block>
+    <block type="checkbox_field">
+      <field name="CHECKBOX">TRUE</field>
+      <field name="NAME">NAME</field>
+    </block>
+    <block type="variable_field">
+      <field name="ITEM">item</field>
+      <field name="NAME">NAME</field>
+    </block>
+    <block type="date_input_field">
+      <field name="NAME">NAME</field>
+    </block>
+    <block type="image_field">
+      <field name="IMAGEURL">url</field>
+      <field name="WIDTH">0</field>
+      <field name="HEIGHT">0</field>
+      <field name="ALTTEXT"></field>
+    </block>
+  </category>
+  <category name="Color">
+    <block type="color_rgb">
+      <field name="R">0</field>
+      <field name="G">0</field>
+      <field name="B">0</field>
+    </block>
+    <block type="color_hsl">
+      <field name="H">0</field>
+      <field name="S">0</field>
+      <field name="L">0</field>
+    </block>
+    <block type="color_hex">
+      <field name="HEX"></field>
+    </block>
+  </category>
   </xml>
   </div>
   <div class="tooledit page" style="">TOOLBOX EDITOR</div>
