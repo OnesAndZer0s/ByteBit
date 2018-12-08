@@ -1,4 +1,4 @@
-goog.require('Blockly.FieldDate')
+goog.require('Blockly.FieldDate');
 Blockly.defineBlocksWithJsonArray([
   {
   "type": "block_creator",
@@ -679,3 +679,8 @@ Blockly.JavaScript['color_hsl'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+var main = editorBlockly.newBlock('block_creator');
+main.initSvg();
+main.render();
+main.setDeletable(false);
+main.setMovable(false);
