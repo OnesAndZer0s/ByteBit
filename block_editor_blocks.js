@@ -42,7 +42,6 @@ var mixin = {/**
    * @this Blockly.Block
    */
   compose: function(containerBlock) {
-    alert('test');
     var itemBlock = containerBlock.childBlocks_;
     // Count number of inputs.
     var connections = [];
@@ -51,6 +50,7 @@ var mixin = {/**
       itemBlock = itemBlock[0].childBlocks_;
     }
  this.itemCount_ = connections.length;
+    alert('thid');
     this.updateShape_();
     // Reconnect any child blocks.
     for (var i = 0; i < this.itemCount_; i++) {
