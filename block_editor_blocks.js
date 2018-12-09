@@ -83,9 +83,7 @@ var mixin = {/**
     for (var i = 0; i < this.itemCount_; i++) {
       if (!this.getInput('FIELD' + i)) {
         var input = this.appendValueInput('FIELD' + i);
-        if (i == 0) {
           input.appendField('input');
-        }
       }
     }
     // Remove deleted inputs.
