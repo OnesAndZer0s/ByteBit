@@ -88,13 +88,11 @@ var mixin = {/**
   updateShape_: function() {
     if (this.itemCount_ && this.getInput('EMPTY')) {
       this.removeInput('EMPTY');
-    } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-      this.appendDummyInput('EMPTY');
     }
     // Add new inputs.
     for (var i = 0; i < this.itemCount_; i++) {
       if (!this.getInput('ADD' + i)) {
-        var input = this.appendValueInput('ADD' + i);
+        var input = this.appendStatementInput('ADD' + i);
         if (i == 0) {
           input.appendField(Blockly.Msg['TEXT_JOIN_TITLE_CREATEWITH']);
         }
