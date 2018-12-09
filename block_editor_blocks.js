@@ -44,7 +44,7 @@ var mixin = {
   decompose: function(workspace) {
     var containerBlock = workspace.newBlock('creator_mutation_input');
     containerBlock.initSvg();
-    var connection = containerBlock.nextConnection;
+    var connection = containerBlock.getInput('INPUTS').connection;
     for (var i = 1; i <= this.blankCount_; i++) {
       var elseifBlock = workspace.newBlock('controls_if_elseif');
       elseifBlock.initSvg();
@@ -259,7 +259,6 @@ Blockly.defineBlocksWithJsonArray([
       "name": "INPUTS"
     }
   ],
-  "nextStatement": null,
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
