@@ -79,7 +79,7 @@ var mixin = {/**
    */
   updateShape_: function() {
    console.log(this);
-    if (this.itemCount_ !== 0 && this.getInput('EMPTY')) {
+    if (this.itemCount_ !== '0' && this.getInput('EMPTY')) {
       this.removeInput('EMPTY');
     } else {
       var noInput = this.appendDummyInput('EMPTY');
