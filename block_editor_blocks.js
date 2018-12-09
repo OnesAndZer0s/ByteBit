@@ -51,9 +51,8 @@ var mixin = {/**
     }
  this.itemCount_ = connections.length;
     this.updateShape_();
-    }
-  },
-  { /**
+    },
+  /**
    * Store pointers to any connected child blocks.
    * @param {!Blockly.Block} containerBlock Root block in mutator.
    * @this Blockly.Block
@@ -68,7 +67,6 @@ var mixin = {/**
       itemBlock = itemBlock.nextConnection &&
           itemBlock.nextConnection.targetBlock();
     }
-  }
   },
   /**
    * Modify this block to have the correct number of inputs.
