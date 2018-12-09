@@ -81,7 +81,7 @@ var mixin = {/**
    console.log(this);
     if (this.itemCount_.toString() !== '0' && this.getInput('EMPTY')) {
       this.removeInput('EMPTY');
-    } else {
+    } else if (!this.itemCount_.toString() !== '0' && !this.getInput('EMPTY')) {
       var noInput = this.appendDummyInput('EMPTY');
       noInput.appendField('no inputs');
     }
