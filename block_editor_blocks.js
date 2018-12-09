@@ -50,11 +50,7 @@ var mixin = {/**
       itemBlock = itemBlock[0].childBlocks_;
     }
  this.itemCount_ = connections.length;
-    alert('thid');
     this.updateShape_();
-    // Reconnect any child blocks.
-    for (var i = 0; i < this.itemCount_; i++) {
-      Blockly.Mutator.reconnect(connections[i], this, 'INPUT' + i);
     }
   },
   /**
