@@ -52,7 +52,7 @@ var mixin = {/**
     }
     // Disconnect any children that don't belong.
     for (var i = 0; i < this.itemCount_; i++) {
-      var connection = this.getInput('ADD' + i).connection.targetConnection;
+      var connection = this.getInput('INPUT' + i).connection.targetConnection;
       if (connection && connections.indexOf(connection) == -1) {
         connection.disconnect();
       }
@@ -61,7 +61,7 @@ var mixin = {/**
     this.updateShape_();
     // Reconnect any child blocks.
     for (var i = 0; i < this.itemCount_; i++) {
-      Blockly.Mutator.reconnect(connections[i], this, 'ADD' + i);
+      Blockly.Mutator.reconnect(connections[i], this, 'INPUT' + i);
     }
   },
   /**
@@ -73,7 +73,7 @@ var mixin = {/**
     var itemBlock = containerBlock.getInputTargetBlock('INPUTS');
     var i = 0;
     while (itemBlock) {
-      var input = this.getInput('ADD' + i);
+      var input = this.getInput('INPUT' + i);
       itemBlock.valueConnection_ = input && input.connection.targetConnection;
       i++;
       itemBlock = itemBlock.nextConnection &&
@@ -94,16 +94,14 @@ var mixin = {/**
     }
     // Add new inputs.
     for (var i = 0; i < this.itemCount_; i++) {
-      if (!this.getInput('ADD' + i)) {
-        var input = this.appendStatementInput('ADD' + i);
-        if (i == 0) {
-          input.appendField('input');
-        }
+      if (!this.getInput('INPUT' + i)) {
+        var input = this.appendStatementInput('INPUT' + i);
+        input.appendField('input');
       }
     }
     // Remove deleted inputs.
-    while (this.getInput('ADD' + i)) {
-      this.removeInput('ADD' + i);
+    while (this.getInput('INPUT' + i)) {
+      this.removeInput('INPUT' + i);
       i++;
     }
   }
