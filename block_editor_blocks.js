@@ -25,7 +25,7 @@ var mixin = {/**
    * @this Blockly.Block
    */
   decompose: function(workspace) {
-    var containerBlock = workspace.newBlock('text_create_join_container');
+    var containerBlock = workspace.newBlock('creator_mutation_input');
     containerBlock.initSvg();
     var connection = containerBlock.getInput('STACK').connection;
     for (var i = 0; i < this.itemCount_; i++) {
@@ -89,9 +89,7 @@ var mixin = {/**
     if (this.itemCount_ && this.getInput('EMPTY')) {
       this.removeInput('EMPTY');
     } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-      this.appendDummyInput('EMPTY')
-          .appendField(this.newQuote_(true))
-          .appendField(this.newQuote_(false));
+      this.appendDummyInput('EMPTY');
     }
     // Add new inputs.
     for (var i = 0; i < this.itemCount_; i++) {
@@ -109,7 +107,7 @@ var mixin = {/**
     }
   }
 };
-Blockly.Extensions.registerMutator('creator_inputs', mixin, null, ['controls_if_elseif','controls_if_else','creator_blank_line','creator_value_line','creator_statement_line']);
+Blockly.Extensions.registerMutator('creator_inputs', mixin, null, ['creator_blank_line','creator_value_line','creator_statement_line']);
 Blockly.defineBlocksWithJsonArray([
   {
   "type": "block_creator",
