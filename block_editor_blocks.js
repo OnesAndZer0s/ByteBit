@@ -46,7 +46,8 @@ var mixin = {/**
     // Count number of inputs.
     var connections = [];
     while (itemBlock !== undefined) {
-      connections.push(itemBlock[0].type.slice('_')[1]);
+      console.log(itemBlock[0]);
+      connections.push(itemBlock[0].type);
       itemBlock = itemBlock[0].childBlocks_;
     }
     console.log(connections);
