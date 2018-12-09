@@ -83,20 +83,7 @@ var mixin = {/**
     } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
       this.appendDummyInput('EMPTY')
     }
-    // Add new inputs.
-    for (var i = 0; i < this.itemCount_; i++) {
-      if (!this.getInput('FIELD' + i)) {
-        var input = this.appendValueInput('FIELD' + i);
-        if (i == 0) {
-          input.appendField('input');
-        }
-      }
-    }
-    // Remove deleted inputs.
-    while (this.getInput('FIELD' + i)) {
-      this.removeInput('FIELD' + i);
-      i++;
-    }
+    
   }
 };
 Blockly.Extensions.registerMutator('creator_inputs', mixin, null, ['creator_blank_line','creator_value_line','creator_statement_line']);
