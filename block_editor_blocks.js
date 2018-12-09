@@ -43,14 +43,11 @@ var mixin = {/**
    */
   compose: function(containerBlock) {
     var itemBlock = containerBlock.getInput('INPUTS');
-    console.log(itemBlock);
     // Count number of inputs.
     var connections = [];
-    while (itemBlock) {
-      console.log(connections)
-      connections.push(itemBlock.valueConnection_);
-      itemBlock = itemBlock.nextConnection &&
-          itemBlock.nextConnection.targetBlock();
+    for (var i=0; i<itemBlock.connection.dbOpposite_.length; i++) {
+      console.log(itemBlock.connection.dbOpposite_[i].sourceBlock_.type)
+      connections.push(itemBlock.connection.dbOpposite_[i].sourceBlock_.type);
     }
     // Disconnect any children that don't belong.
     for (var i = 0; i < this.itemCount_; i++) {
