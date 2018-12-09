@@ -86,11 +86,10 @@ var mixin = {/**
    * @this Blockly.Block
    */
   updateShape_: function() {
+    var noInput = this.appendDummyInput('EMPTY');
+      noInput.appendField('no inputs');
     if (this.itemCount_ && this.getInput('EMPTY')) {
       this.removeInput('EMPTY');
-    } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-      var noInput = this.appendDummyInput('EMPTY');
-      noInput.appendField('No inputs');
     }
     // Add new inputs.
     for (var i = 0; i < this.itemCount_; i++) {
