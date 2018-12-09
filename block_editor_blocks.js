@@ -82,7 +82,7 @@ var mixin = {/**
     // Add new inputs.
     for (var i = 0; i < this.itemCount_; i++) {
       if (!this.getInput('FIELD' + i)) {
-        var input = this.appendValueInput('FIELD' + i);
+        var input = this.appendStatementInput('FIELD' + i);
           input.appendField('input');
       }
     }
