@@ -20,6 +20,9 @@ var mixin = {
     if (this.valueCount_) {
       container.setAttribute('else', 1);
     }
+    if (this.statementCount_) {
+      container.setAttribute('statement', this.statementCount_);
+    }
     return container;
   },
   /**
@@ -39,7 +42,7 @@ var mixin = {
    * @this Blockly.Block
    */
   decompose: function(workspace) {
-    var containerBlock = workspace.newBlock('controls_if_if');
+    var containerBlock = workspace.newBlock('creator_mutation_input');
     containerBlock.initSvg();
     var connection = containerBlock.nextConnection;
     for (var i = 1; i <= this.blankCount_; i++) {
