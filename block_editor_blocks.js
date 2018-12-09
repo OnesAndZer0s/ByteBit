@@ -86,7 +86,7 @@ var mixin = {/**
       noInput.appendField('no inputs');
     }
     // Add new inputs.
-    for (var i = 0; i < 1; i++) {
+    for (var i = 0; i < parseInt(this.itemCount_); i++) {
       if (!this.getInput('INPUT' + i)) {
         var input = this.appendStatementInput('INPUT' + i);
         input.appendField('input');
