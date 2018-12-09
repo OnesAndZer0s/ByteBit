@@ -27,7 +27,7 @@ var mixin = {/**
   decompose: function(workspace) {
     var containerBlock = workspace.newBlock('creator_mutation_input');
     containerBlock.initSvg();
-    var connection = containerBlock.getInput('STACK').connection;
+    var connection = containerBlock.getInput('INPUTS').connection;
     for (var i = 0; i < this.itemCount_; i++) {
       var itemBlock = workspace.newBlock('text_create_join_item');
       itemBlock.initSvg();
@@ -42,7 +42,7 @@ var mixin = {/**
    * @this Blockly.Block
    */
   compose: function(containerBlock) {
-    var itemBlock = containerBlock.getInputTargetBlock('STACK');
+    var itemBlock = containerBlock.getInputTargetBlock('INPUTS');
     // Count number of inputs.
     var connections = [];
     while (itemBlock) {
@@ -70,7 +70,7 @@ var mixin = {/**
    * @this Blockly.Block
    */
   saveConnections: function(containerBlock) {
-    var itemBlock = containerBlock.getInputTargetBlock('STACK');
+    var itemBlock = containerBlock.getInputTargetBlock('INPUTS');
     var i = 0;
     while (itemBlock) {
       var input = this.getInput('ADD' + i);
