@@ -43,7 +43,7 @@ var mixin = {/**
    */
   compose: function(containerBlock) {
     var itemBlock = containerBlock.getInputTargetBlock('INPUTS');
-          console.log(itemBlock);
+    console.log(itemBlock);
     // Count number of inputs.
     var connections = [];
     while (itemBlock) {
