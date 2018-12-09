@@ -155,7 +155,7 @@ var mixin = {
   }
 };
 ;
-Blockly.Extensions.registerMutator('creator_inputs', mixin, '', ['controls_if_elseif','controls_if_else','creator_blank_line','creator_value_line','creator_statement_line']);
+Blockly.Extensions.registerMutator('creator_inputs', mixin, null, ['controls_if_elseif','controls_if_else','creator_blank_line','creator_value_line','creator_statement_line']);
 Blockly.defineBlocksWithJsonArray([
   {
   "type": "block_creator",
