@@ -176,6 +176,10 @@ Blockly.defineBlocksWithJsonArray([
     {
       "type": "input_value",
       "name": "MUTATOR"
+    },
+    {
+      "type": "input_dummy",
+      "name": "EMPTY"
     }
   ],
   "colour": 135,
