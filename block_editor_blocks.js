@@ -1,7 +1,7 @@
 goog.require('Blockly.FieldDate');
 var mixin = {
   blankCount_: 0,
-  elseCount_: 0,
+  valueCount_: 0,
   statementCount_: 0,
 
   /**
@@ -10,14 +10,14 @@ var mixin = {
    * @this Blockly.Block
    */
   mutationToDom: function() {
-    if (!this.blankCount_ && !this.elseCount_) {
+    if (!this.blankCount_ && !this.valueCount_) {
       return null; 
     }
     var container = document.createElement('mutation');
     if (this.blankCount_) {
       container.setAttribute('elseif', this.blankCount_);
     }
-    if (this.elseCount_) {
+    if (this.valueCount_) {
       container.setAttribute('else', 1);
     }
     return container;
@@ -29,7 +29,7 @@ var mixin = {
    */
   domToMutation: function(xmlElement) {
     this.blankCount_ = parseInt(xmlElement.getAttribute('elseif'), 10) || 0;
-    this.elseCount_ = parseInt(xmlElement.getAttribute('else'), 10) || 0;
+    this.valueCount_ = parseInt(xmlElement.getAttribute('else'), 10) || 0;
     this.updateShape_();
   },
   /**
@@ -48,7 +48,7 @@ var mixin = {
       connection.connect(elseifBlock.previousConnection);
       connection = elseifBlock.nextConnection;
     }
-    if (this.elseCount_) {
+    if (this.valueCount_) {
       var elseBlock = workspace.newBlock('controls_if_else');
       elseBlock.initSvg();
       connection.connect(elseBlock.previousConnection);
@@ -64,7 +64,7 @@ var mixin = {
     var clauseBlock = containerBlock.nextConnection.targetBlock();
     // Count number of inputs.
     this.blankCount_ = 0;
-    this.elseCount_ = 0;
+    this.valueCount_ = 0;
     var valueConnections = [null];
     var statementConnections = [null];
     var elseStatementConnection = null;
@@ -76,7 +76,7 @@ var mixin = {
           statementConnections.push(clauseBlock.statementConnection_);
           break;
         case 'controls_if_else':
-          this.elseCount_++;
+          this.valueCount_++;
           elseStatementConnection = clauseBlock.statementConnection_;
           break;
         default:
@@ -148,7 +148,7 @@ var mixin = {
       this.appendStatementInput('DO' + i)
           .appendField(Blockly.Msg['CONTROLS_IF_MSG_THEN']);
     }
-    if (this.elseCount_) {
+    if (this.valueCount_) {
       this.appendStatementInput('ELSE')
           .appendField(Blockly.Msg['CONTROLS_IF_MSG_ELSE']);
     }
