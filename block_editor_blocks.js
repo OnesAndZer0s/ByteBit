@@ -68,6 +68,7 @@ var mixin = {/**
       itemBlock = itemBlock.nextConnection &&
           itemBlock.nextConnection.targetBlock();
     }
+  }
   },
   /**
    * Modify this block to have the correct number of inputs.
