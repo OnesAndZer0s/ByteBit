@@ -42,7 +42,7 @@ var mixin = {/**
    * @this Blockly.Block
    */
   compose: function(containerBlock) {
-    var itemBlock = containerBlock.getInputTargetBlock('INPUTS');
+    var itemBlock = containerBlock.getInput('INPUTS');
     console.log(itemBlock);
     // Count number of inputs.
     var connections = [];
