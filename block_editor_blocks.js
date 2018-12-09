@@ -497,7 +497,7 @@ Blockly.defineBlocksWithJsonArray([
 },
 {
   "type": "creator_blank_line",
-  "message0": "blank line",
+  "message0": "blank",
   "previousStatement": null,
   "nextStatement": null,
   "colour": 230,
@@ -506,7 +506,7 @@ Blockly.defineBlocksWithJsonArray([
 },
 {
   "type": "creator_value_line",
-  "message0": "value line",
+  "message0": "value",
   "previousStatement": null,
   "nextStatement": null,
   "colour": 230,
@@ -515,7 +515,7 @@ Blockly.defineBlocksWithJsonArray([
 },
 {
   "type": "creator_statement_line",
-  "message0": "statement line",
+  "message0": "statement",
   "previousStatement": null,
   "nextStatement": null,
   "colour": 230,
