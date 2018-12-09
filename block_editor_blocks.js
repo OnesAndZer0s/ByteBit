@@ -77,8 +77,8 @@ var mixin = {/**
     if (this.itemCount_.length && this.getInput('EMPTY')) {
       this.removeInput('EMPTY');
     } else if (!this.itemCount_.length && !this.getInput('EMPTY')) {
-      this.appendDummyInput('EMPTY');
-      this.appendField('no inputs');
+      var empty = this.appendDummyInput('EMPTY');
+      empty.appendField('no inputs');
     }
     // Add new inputs.
     for (var i = 0; i < this.itemCount_.length; i++) {
