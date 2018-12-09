@@ -65,7 +65,7 @@ var mixin = {/**
     var itemBlock = containerBlock.getInputTargetBlock('INPUTS');
     var i = 0;
     while (itemBlock) {
-      var input = this.getInput('INPUT' + i);
+      var input = this.getInput('FIELD' + i);
       itemBlock.valueConnection_ = input && input.connection.targetConnection;
       i++;
       itemBlock = itemBlock.nextConnection &&
@@ -78,23 +78,23 @@ var mixin = {/**
    * @this Blockly.Block
    */
   updateShape_: function() {
-   console.log(this);
-    if (this.itemCount_.toString() !== '0' && this.getInput('EMPTY')) {
+   if (this.itemCount_ && this.getInput('EMPTY')) {
       this.removeInput('EMPTY');
-    } else if (!this.itemCount_.toString() !== '0' && !this.getInput('EMPTY')) {
-      var noInput = this.appendDummyInput('EMPTY');
-      noInput.appendField('no inputs');
+    } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
+      this.appendDummyInput('EMPTY')
     }
     // Add new inputs.
-    for (var i = 0; i < parseInt(this.itemCount_); i++) {
-      if (!this.getInput('INPUT' + i)) {
-        var input = this.appendStatementInput('INPUT' + i);
-        input.appendField('input');
+    for (var i = 0; i < this.itemCount_; i++) {
+      if (!this.getInput('FIELD' + i)) {
+        var input = this.appendValueInput('FIELD' + i);
+        if (i == 0) {
+          input.appendField('input);
+        }
       }
     }
     // Remove deleted inputs.
-    while (this.getInput('INPUT' + i)) {
-      this.removeInput('INPUT' + i);
+    while (this.getInput('FIELD' + i)) {
+      this.removeInput('FIELD' + i);
       i++;
     }
   }
