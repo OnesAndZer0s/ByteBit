@@ -88,7 +88,7 @@ var mixin = {/**
       if (!this.getInput('FIELD' + i)) {
         var input = this.appendValueInput('FIELD' + i);
         if (i == 0) {
-          input.appendField('input);
+          input.appendField('input');
         }
       }
     }
