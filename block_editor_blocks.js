@@ -49,7 +49,7 @@ var mixin = {/**
       connections.push(itemBlock[0].type);
       itemBlock = itemBlock[0].childBlocks_;
     }
- this.itemCount_ = connections.length;
+ this.itemCount_ = connections;
     this.updateShape_();
     },
   /**
@@ -74,17 +74,18 @@ var mixin = {/**
    * @this Blockly.Block
    */
   updateShape_: function() {
-    if (this.itemCount_ && this.getInput('EMPTY')) {
+    if (this.itemCount_.length && this.getInput('EMPTY')) {
       this.removeInput('EMPTY');
-    } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
+    } else if (!this.itemCount_.length && !this.getInput('EMPTY')) {
       this.appendDummyInput('EMPTY');
       this.appendField('no inputs');
     }
     // Add new inputs.
-    for (var i = 0; i < this.itemCount_; i++) {
+    for (var i = 0; i < this.itemCount_.length; i++) {
       if (!this.getInput('FIELD' + i)) {
         var input = this.appendStatementInput('FIELD' + i);
           input.appendField('input');
+        alert(this.itemCount_[i]);
       }
     }
     // Remove deleted inputs.
