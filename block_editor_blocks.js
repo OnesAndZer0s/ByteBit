@@ -84,7 +84,6 @@ var mixin = {/**
     for (var i = 0; i < this.itemCount_.length; i++) {
       if (!this.getInput('FIELD' + i)) {
         var input = this.appendStatementInput('FIELD' + i);
-        var dropdown = new FieldDropdown(['name:test']);
         input.appendField(this.itemCount_[i].split('_')[1]);
         input.appendField(dropdown);
       }
@@ -456,7 +455,32 @@ Blockly.defineBlocksWithJsonArray([
 },
 {
   "type": "creator_blank_line",
-  "message0": "blank",
+  "message0": "blank %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "NAME",
+      "text": "NAME"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "POSITION",
+      "options": [
+        [
+          "left",
+          "left"
+        ],
+        [
+          "right",
+          "right"
+        ],
+        [
+          "center",
+          "center"
+        ]
+      ]
+    }
+  ],
   "previousStatement": null,
   "nextStatement": null,
   "colour": 230,
@@ -465,7 +489,32 @@ Blockly.defineBlocksWithJsonArray([
 },
 {
   "type": "creator_value_line",
-  "message0": "value",
+  "message0": "value %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "NAME",
+      "text": "NAME"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "POSITION",
+      "options": [
+        [
+          "left",
+          "left"
+        ],
+        [
+          "right",
+          "right"
+        ],
+        [
+          "center",
+          "center"
+        ]
+      ]
+    }
+  ],
   "previousStatement": null,
   "nextStatement": null,
   "colour": 230,
@@ -474,7 +523,32 @@ Blockly.defineBlocksWithJsonArray([
 },
 {
   "type": "creator_statement_line",
-  "message0": "statement",
+  "message0": "statement %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "NAME",
+      "text": "NAME"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "POSITION",
+      "options": [
+        [
+          "left",
+          "left"
+        ],
+        [
+          "right",
+          "right"
+        ],
+        [
+          "center",
+          "center"
+        ]
+      ]
+    }
+  ],
   "previousStatement": null,
   "nextStatement": null,
   "colour": 230,
