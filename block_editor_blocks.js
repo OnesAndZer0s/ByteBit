@@ -90,7 +90,7 @@ var mixin = {/**
       this.removeInput('EMPTY');
     } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
       var noInput = this.appendDummyInput('EMPTY');
-      noInput.appendField('No inputs');
+      noInput.appendField('no inputs');
     }
     // Add new inputs.
     for (var i = 0; i < this.itemCount_; i++) {
@@ -192,7 +192,7 @@ Blockly.defineBlocksWithJsonArray([
       "name": "MUTATOR"
     },
     {
-      "type": "dummy_statement",
+      "type": "input_dummy",
       "name": "EMPTY"
     }
   ],
