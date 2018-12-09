@@ -27,7 +27,6 @@ var mixin = {/**
   decompose: function(workspace) {
     var containerBlock = workspace.newBlock('creator_mutation_input');
     containerBlock.initSvg();
-    console.log(containerBlock);
     var connection = containerBlock.getInput('INPUTS').connection;
     for (var i = 0; i < this.itemCount_; i++) {
       var itemBlock = workspace.newBlock('text_create_join_item');
@@ -47,6 +46,7 @@ var mixin = {/**
     // Count number of inputs.
     var connections = [];
     while (itemBlock) {
+      console.log(connections)
       connections.push(itemBlock.valueConnection_);
       itemBlock = itemBlock.nextConnection &&
           itemBlock.nextConnection.targetBlock();
