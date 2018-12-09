@@ -84,7 +84,8 @@ var mixin = {/**
     for (var i = 0; i < this.itemCount_.length; i++) {
       if (!this.getInput('FIELD' + i)) {
         var input = this.appendStatementInput('FIELD' + i);
-          input.appendField(this.itemCount_[i].split('_')[1]);
+        input.appendField('field_dropdown','"type": "field_dropdown","name": "POSITION","options": [["left","left"],["right","right"],["center","center"]]');
+        input.appendField(this.itemCount_[i].split('_')[1]);
       }
     }
     // Remove deleted inputs.
