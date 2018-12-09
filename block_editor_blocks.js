@@ -1,33 +1,21 @@
 goog.require('Blockly.FieldDate');
-var mixin = {
-  blankCount_: 0,
-  valueCount_: 0,
-  statementCount_: 0,
-
-  /**
-   * Create XML to represent the number of else-if and else inputs.
-   * @return {Element} XML storage element.
+var mixin = {/**
+   * Create XML to represent number of text inputs.
+   * @return {!Element} XML storage element.
    * @this Blockly.Block
    */
   mutationToDom: function() {
-    if (!this.blankCount_ && !this.valueCount_ && !this.statementCount_) {
-      return null; 
-    }
     var container = document.createElement('mutation');
-    container.setAttribute('blank', this.blankCount_);
-    container.setAttribute('value', this.valueCount_);
-    container.setAttribute('statement', this.statementCount_);
+    container.setAttribute('items', this.itemCount_);
     return container;
   },
   /**
-   * Parse XML to restore the else-if and else inputs.
+   * Parse XML to restore the text inputs.
    * @param {!Element} xmlElement XML storage element.
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-    this.blankCount_ = parseInt(xmlElement.getAttribute('blank'), 10) || 0;
-    this.valueCount_ = parseInt(xmlElement.getAttribute('value'), 10) || 0;
-    this.statementCount_ = parseInt(xmlElement.getAttribute('statement'), 10) || 0;
+    this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
     this.updateShape_();
   },
   /**
@@ -37,17 +25,14 @@ var mixin = {
    * @this Blockly.Block
    */
   decompose: function(workspace) {
-    var containerBlock = workspace.newBlock('creator_mutation_input');
+    var containerBlock = workspace.newBlock('text_create_join_container');
     containerBlock.initSvg();
-    var connection = containerBlock.getInput('INPUTS').connection;
-    for (var i = 0; i <= (this.blankCount_ + this.valueCount_ + this.statementCount_); i++) {
-      console.log(connection);
-      if (true) {var newBlock = workspace.newBlock('creator_blank_line');}
-      if (false) {var newBlock = workspace.newBlock('creator_value_line');}
-      if (false) {var newBlock = workspace.newBlock('creator_statement_line');}
-      newBlock.initSvg();
-      connection.connect(newBlock.previousConnection);
-      connection = newBlock.nextConnection;
+    var connection = containerBlock.getInput('STACK').connection;
+    for (var i = 0; i < this.itemCount_; i++) {
+      var itemBlock = workspace.newBlock('text_create_join_item');
+      itemBlock.initSvg();
+      connection.connect(itemBlock.previousConnection);
+      connection = itemBlock.nextConnection;
     }
     return containerBlock;
   },
@@ -57,25 +42,27 @@ var mixin = {
    * @this Blockly.Block
    */
   compose: function(containerBlock) {
-    var clauseBlock = containerBlock.getInputTargetBlock('INPUTS');
+    var itemBlock = containerBlock.getInputTargetBlock('STACK');
     // Count number of inputs.
-    this.blankCount_ = 0;
-    this.valueCount_ = 0;
-    this.statementCount_ = 0;
-    var valueConnections = [null];
-    var statementConnections = [null];
-    var elseStatementConnection = null;
-    while (clauseBlock) {
-      clauseBlock = clauseBlock.nextConnection &&
-      clauseBlock.nextConnection.targetBlock();
+    var connections = [];
+    while (itemBlock) {
+      connections.push(itemBlock.valueConnection_);
+      itemBlock = itemBlock.nextConnection &&
+          itemBlock.nextConnection.targetBlock();
     }
+    // Disconnect any children that don't belong.
+    for (var i = 0; i < this.itemCount_; i++) {
+      var connection = this.getInput('ADD' + i).connection.targetConnection;
+      if (connection && connections.indexOf(connection) == -1) {
+        connection.disconnect();
+      }
+    }
+    this.itemCount_ = connections.length;
     this.updateShape_();
     // Reconnect any child blocks.
-    for (var i = 0; i <= this.blankCount_; i++) {
-      Blockly.Mutator.reconnect(valueConnections[i], this, 'IF' + i);
-      Blockly.Mutator.reconnect(statementConnections[i], this, 'DO' + i);
+    for (var i = 0; i < this.itemCount_; i++) {
+      Blockly.Mutator.reconnect(connections[i], this, 'ADD' + i);
     }
-    Blockly.Mutator.reconnect(elseStatementConnection, this, 'ELSE');
   },
   /**
    * Store pointers to any connected child blocks.
@@ -83,62 +70,45 @@ var mixin = {
    * @this Blockly.Block
    */
   saveConnections: function(containerBlock) {
-    var clauseBlock = containerBlock.nextConnection.targetBlock();
-    var i = 1;
-    while (clauseBlock) {
-      switch (clauseBlock.type) {
-        case 'controls_if_elseif':
-          var inputIf = this.getInput('IF' + i);
-          var inputDo = this.getInput('DO' + i);
-          clauseBlock.valueConnection_ =
-              inputIf && inputIf.connection.targetConnection;
-          clauseBlock.statementConnection_ =
-              inputDo && inputDo.connection.targetConnection;
-          i++;
-          break;
-        case 'controls_if_else':
-          var inputDo = this.getInput('ELSE');
-          clauseBlock.statementConnection_ =
-              inputDo && inputDo.connection.targetConnection;
-          break;
-        default:
-          throw TypeError('Unknown block type: ' + clauseBlock.type);
-      }
-      clauseBlock = clauseBlock.nextConnection &&
-          clauseBlock.nextConnection.targetBlock();
+    var itemBlock = containerBlock.getInputTargetBlock('STACK');
+    var i = 0;
+    while (itemBlock) {
+      var input = this.getInput('ADD' + i);
+      itemBlock.valueConnection_ = input && input.connection.targetConnection;
+      i++;
+      itemBlock = itemBlock.nextConnection &&
+          itemBlock.nextConnection.targetBlock();
     }
   },
   /**
    * Modify this block to have the correct number of inputs.
-   * @this Blockly.Block
    * @private
+   * @this Blockly.Block
    */
   updateShape_: function() {
-    // Delete everything.
-    if (this.getInput('ELSE')) {
-      this.removeInput('ELSE');
+    if (this.itemCount_ && this.getInput('EMPTY')) {
+      this.removeInput('EMPTY');
+    } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
+      this.appendDummyInput('EMPTY')
+          .appendField(this.newQuote_(true))
+          .appendField(this.newQuote_(false));
     }
-    var i = 1;
-    while (this.getInput('IF' + i)) {
-      this.removeInput('IF' + i);
-      this.removeInput('DO' + i);
+    // Add new inputs.
+    for (var i = 0; i < this.itemCount_; i++) {
+      if (!this.getInput('ADD' + i)) {
+        var input = this.appendValueInput('ADD' + i);
+        if (i == 0) {
+          input.appendField(Blockly.Msg['TEXT_JOIN_TITLE_CREATEWITH']);
+        }
+      }
+    }
+    // Remove deleted inputs.
+    while (this.getInput('ADD' + i)) {
+      this.removeInput('ADD' + i);
       i++;
-    }
-    // Rebuild block.
-    for (var i = 1; i <= this.blankCount_; i++) {
-      this.appendValueInput('IF' + i)
-          .setCheck('Boolean')
-          .appendField(Blockly.Msg['CONTROLS_IF_MSG_ELSEIF']);
-      this.appendStatementInput('DO' + i)
-          .appendField(Blockly.Msg['CONTROLS_IF_MSG_THEN']);
-    }
-    if (this.valueCount_) {
-      this.appendStatementInput('ELSE')
-          .appendField(Blockly.Msg['CONTROLS_IF_MSG_ELSE']);
     }
   }
 };
-;
 Blockly.Extensions.registerMutator('creator_inputs', mixin, null, ['controls_if_elseif','controls_if_else','creator_blank_line','creator_value_line','creator_statement_line']);
 Blockly.defineBlocksWithJsonArray([
   {
