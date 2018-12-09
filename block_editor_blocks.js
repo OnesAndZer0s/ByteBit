@@ -53,7 +53,7 @@ var mixin = {/**
     this.updateShape_();
     }
   },
-  /**
+  { /**
    * Store pointers to any connected child blocks.
    * @param {!Blockly.Block} containerBlock Root block in mutator.
    * @this Blockly.Block
