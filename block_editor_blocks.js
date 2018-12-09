@@ -103,7 +103,7 @@ Blockly.Extensions.registerMutator('creator_inputs', mixin, null, ['creator_blan
 Blockly.defineBlocksWithJsonArray([
   {
   "type": "block_creator",
-  "message0": "name %1 %2 %3 inputs %4 %5 DROPDOWNMUTATION %6 tooltip %7 help url %8 color %9 mutator %10 no inputs %11",
+  "message0": "name %1 %2 %3 inputs %4 %5 DROPDOWNMUTATION %6 tooltip %7 help url %8 color %9 mutator %10",
   "args0": [
     {
       "type": "field_input",
@@ -181,10 +181,6 @@ Blockly.defineBlocksWithJsonArray([
     {
       "type": "input_value",
       "name": "MUTATOR"
-    },
-    {
-      "type": "input_dummy",
-      "name": "EMPTY"
     }
   ],
   "colour": 135,
