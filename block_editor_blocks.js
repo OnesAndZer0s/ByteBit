@@ -42,14 +42,16 @@ var mixin = {/**
    * @this Blockly.Block
    */
   compose: function(containerBlock) {
-    var itemBlock = containerBlock.getInput('INPUTS');
+    var itemBlock = containerBlock.childBlocks[0];
     console.log(containerBlock);
     // Count number of inputs.
     var connections = [];
-    for (var i=0; i<itemBlock.connection.dbOpposite_.length; i++) {
-      console.log(itemBlock.connection.dbOpposite_[i].sourceBlock_.type)
-      connections.push(itemBlock.connection.dbOpposite_[i].sourceBlock_.type);
+    while (itemBlock) {
+      console.log(itemBlock)
+      connections.push(itemBlock.type);
+      itemBlock = itemBlock.childBlocks[0];
     }
+    console.log(connections);
     // Disconnect any children that don't belong.
     for (var i = 0; i < this.itemCount_; i++) {
       var connection = this.getInput('INPUT' + i).connection.targetConnection;
