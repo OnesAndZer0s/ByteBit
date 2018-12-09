@@ -78,6 +78,7 @@ var mixin = {/**
    * @this Blockly.Block
    */
   updateShape_: function() {
+   console.log(this);
     if (this.itemCount_ !== 0 && this.getInput('EMPTY')) {
       this.removeInput('EMPTY');
     } else {
