@@ -245,6 +245,23 @@ Blockly.defineBlocksWithJsonArray([
   "helpUrl": ""
 },
 {
+  "type": "creator_mutation_input",
+  "message0": "inputs %1 %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_statement",
+      "name": "INPUTS"
+    }
+  ],
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
   "type": "text_field",
   "message0": "text %1 , %2",
   "args0": [
