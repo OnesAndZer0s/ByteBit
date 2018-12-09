@@ -50,13 +50,6 @@ var mixin = {/**
       itemBlock = itemBlock[0].childBlocks_;
     }
  this.itemCount_ = connections.length;
-    // Disconnect any children that don't belong.
-    for (var i = 0; i < this.itemCount_; i++) {
-      var connection = this.getInput('INPUT' + i).connection.targetConnection;
-      if (connection && connections.indexOf(connection) == -1) {
-        connection.disconnect();
-      }
-    }
     this.updateShape_();
     // Reconnect any child blocks.
     for (var i = 0; i < this.itemCount_; i++) {
