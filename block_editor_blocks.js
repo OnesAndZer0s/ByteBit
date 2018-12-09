@@ -46,11 +46,10 @@ var mixin = {/**
     // Count number of inputs.
     var connections = [];
     while (itemBlock[0] !== undefined) {
-      console.log(itemBlock[0]);
       connections.push(itemBlock[0].type);
       itemBlock = itemBlock[0].childBlocks_;
     }
-    console.log(connections);
+ this.itemCount_ = connections.length;
     // Disconnect any children that don't belong.
     for (var i = 0; i < this.itemCount_; i++) {
       var connection = this.getInput('INPUT' + i).connection.targetConnection;
@@ -58,7 +57,6 @@ var mixin = {/**
         connection.disconnect();
       }
     }
-    this.itemCount_ = connections.length;
     this.updateShape_();
     // Reconnect any child blocks.
     for (var i = 0; i < this.itemCount_; i++) {
@@ -87,9 +85,9 @@ var mixin = {/**
    * @this Blockly.Block
    */
   updateShape_: function() {
-    if (this.itemCount_ && this.getInput('EMPTY')) {
+    if (this.itemCount_ !== 0 && this.getInput('EMPTY') !== undefined) {
       this.removeInput('EMPTY');
-    } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
+    } else {
       var noInput = this.appendDummyInput('EMPTY');
       noInput.appendField('no inputs');
     }
