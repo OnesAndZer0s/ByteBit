@@ -86,10 +86,11 @@ var mixin = {/**
    * @this Blockly.Block
    */
   updateShape_: function() {
-    var noInput = this.appendDummyInput('EMPTY');
-      noInput.appendField('no inputs');
     if (this.itemCount_ && this.getInput('EMPTY')) {
       this.removeInput('EMPTY');
+    } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
+      var noInput = this.appendDummyInput('EMPTY');
+      noInput.appendField('No inputs');
     }
     // Add new inputs.
     for (var i = 0; i < this.itemCount_; i++) {
@@ -111,7 +112,7 @@ Blockly.Extensions.registerMutator('creator_inputs', mixin, null, ['creator_blan
 Blockly.defineBlocksWithJsonArray([
   {
   "type": "block_creator",
-  "message0": "name %1 %2 %3 inputs %4 %5 DROPDOWNMUTATION %6 tooltip %7 help url %8 color %9 mutator %10",
+  "message0": "name %1 %2 %3 inputs %4 %5 DROPDOWNMUTATION %6 tooltip %7 help url %8 color %9 mutator %10 %11",
   "args0": [
     {
       "type": "field_input",
@@ -189,6 +190,10 @@ Blockly.defineBlocksWithJsonArray([
     {
       "type": "input_value",
       "name": "MUTATOR"
+    },
+    {
+      "type": "dummy_statement",
+      "name": "EMPTY"
     }
   ],
   "colour": 135,
