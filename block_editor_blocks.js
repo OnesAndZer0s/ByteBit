@@ -10,7 +10,7 @@ var mixin = {
    */
   mutationToDom: function() {
     if (!this.elseifCount_ && !this.elseCount_) {
-      return null;
+      return null; 
     }
     var container = document.createElement('mutation');
     if (this.elseifCount_) {
@@ -141,7 +141,7 @@ var mixin = {
     }
     // Rebuild block.
     for (var i = 1; i <= this.elseifCount_; i++) {
-      this.appendValueInput('TEST' + i)
+      this.appendValueInput('IF' + i)
           .setCheck('Boolean')
           .appendField(Blockly.Msg['CONTROLS_IF_MSG_ELSEIF']);
       this.appendStatementInput('DO' + i)
