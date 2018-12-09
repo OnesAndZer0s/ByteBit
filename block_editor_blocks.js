@@ -177,8 +177,7 @@ Blockly.defineBlocksWithJsonArray([
       "name": "MUTATOR"
     },
     {
-      "type": "dummy_value",
-      "name": "EMPTY",
+      "type": "input_dummy",
       "text": "no inputs"
     }
   ],
