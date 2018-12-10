@@ -82,6 +82,7 @@ var mixin = {/**
     }
     // Add new inputs.
     for (var i = 0; i < this.itemCount_.length; i++) {
+        if (!this.getInput('FIELD' + i)) {
         this.removeInput('FIELD' + i);
         var input = this.appendStatementInput('FIELD' + i);
         input.appendField(this.itemCount_[i].split('_')[1]);
