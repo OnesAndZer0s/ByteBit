@@ -92,7 +92,6 @@ var mixin = {/**
       i++;
     }
 }
-}
 };
 Blockly.Extensions.registerMutator('creator_inputs', mixin, null, ['creator_blank_line','creator_value_line','creator_statement_line']);
 Blockly.defineBlocksWithJsonArray([
