@@ -233,7 +233,6 @@ opacity: 1;
   <div class="Editor page" style="">
      <div id="blocklyEditor" style="position: absolute;left: 0px;top: 0px;width:1000px;height:500px;"></div>
   <xml id="toolboxEditor" style="display:none">
-   <category name="Field">
     <block type="text_field">
       <field name="TEXT">text</field>
       <field name="CLASS">CLASS</field>
@@ -275,22 +274,6 @@ opacity: 1;
       <field name="HEIGHT">0</field>
       <field name="ALTTEXT"></field>
     </block>
-  </category>
-  <category name="Color">
-    <block type="color_rgb">
-      <field name="R">0</field>
-      <field name="G">0</field>
-      <field name="B">0</field>
-    </block>
-    <block type="color_hsl">
-      <field name="H">0</field>
-      <field name="S">0</field>
-      <field name="L">0</field>
-    </block>
-    <block type="color_hex">
-      <field name="HEX"></field>
-    </block>
-  </category>
   </xml>
   </div>
   <div class="tooledit page" style="">TOOLBOX EDITOR</div>
@@ -392,7 +375,7 @@ window.onclick = function(e) {
   helptxt.outputConnection.connect(main.getInput("HELPURL").connection);
   helptxt.initSvg();
   helptxt.render();
-  var colorblock = main.workspace.newBlock('text');
+  var colorblock = main.workspace.newBlock('color_select');
   colorblock.setDeletable(false);
   colorblock.setMovable(false);
   colorblock.outputConnection.connect(main.getInput("COLOR").connection);
