@@ -87,6 +87,14 @@ var mixin = {/**
         var info = this.appendDummyInput('INFO' + i);}
         info.appendField(this.itemCount_[i] + '');
         var input = this.appendStatementInput('FIELD' + i);
+        if (this.itemCount_[i].type.split('_')[1] !== "blank") {
+        var typeselect = this.workspace.newBlock('type_select');
+        typeselect.setDeletable(false);
+        typeselect.setMovable(false);
+        typeselect.outputConnection.connect(main.getInput("FIELD" + i).connection);
+        typeselect.initSvg();
+        typeselect.render();
+        }
     }
     // Remove deleted inputs.
      while (this.getInput('FIELD' + i)) {
