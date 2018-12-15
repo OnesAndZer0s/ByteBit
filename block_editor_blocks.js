@@ -23,7 +23,7 @@ var mixin = {/**
    * @this Blockly.Block
    */
   decompose: function(workspace) {
-    console.log(this.itemBlock);
+    console.log(this.itemBlock_);
     var containerBlock = workspace.newBlock('creator_mutation_input');
     containerBlock.initSvg();
     for (var i = 0; i < 0; i++) {
@@ -79,15 +79,10 @@ var mixin = {/**
     }
     // Add new inputs.
     for (var i = 0; i < this.itemCount_.length; i++) {
-       if (!this.getInput('FIELD' + i)) {
+        console.log(this.getInput('FIELD' + i));
+       if (this.getInput('FIELD' + i) !== undefined) {this.removeInput('FIELD' + i);}
         var input = this.appendStatementInput('FIELD' + i);
         input.appendField(this.itemCount_[i] + '');
-      }
-    }
-    // Remove deleted inputs.
-    while (this.getInput('FIELD' + i)) {
-      this.removeInput('FIELD' + i);
-      i++;
     }
 }
 };
