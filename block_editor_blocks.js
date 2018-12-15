@@ -45,12 +45,12 @@ var mixin = {/**
     // Count number of inputs.
     var connections = [];
     while (itemBlock[0] !== undefined) {
-      connections.push(itemBlock[0].type);
+      connections.push(itemBlock[0]);
       itemBlock = itemBlock[0].childBlocks_;
     }
  this.itemCount_ = connections;
     this.updateShape_();
-        console.log(connections);
+ console.log(this.itemCount_);
     },
   /**
    * Store pointers to any connected child blocks.
@@ -84,7 +84,7 @@ var mixin = {/**
     for (var i = 0; i < this.itemCount_.length; i++) {
        if (!this.getInput('FIELD' + i)) {
         var input = this.appendStatementInput('FIELD' + i);
-        input.appendField(this.itemCount_[i].split('_')[1]);
+        input.appendField(this.itemCount_[i].type..split('_')[1]);
       }
     }
     // Remove deleted inputs.
