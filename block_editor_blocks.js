@@ -576,41 +576,32 @@ Blockly.defineBlocksWithJsonArray([
   "helpUrl": ""
 },
 {
-  "type": "type_any_of",
-  "message0": "MENUMUTATOR",
-  "inputsInline": false,
-  "output": "type",
-  "colour": 230,
-  "tooltip": "",
-  "helpUrl": ""
-},
-{
   "type": "type_select",
-  "message0": "%1",
+  "message0": "mutatorhere %1",
   "args0": [
     {
       "type": "field_dropdown",
-      "name": "TYPE",
+      "name": "NAME",
       "options": [
         [
           "any",
-          "any"
+          "null"
         ],
         [
           "boolean",
-          "boolean"
+          "Boolean"
         ],
         [
           "number",
-          "number"
+          "Number"
         ],
         [
           "string",
-          "string"
+          "String"
         ],
         [
           "array",
-          "array"
+          "Array"
         ],
         [
           "other",
@@ -619,8 +610,7 @@ Blockly.defineBlocksWithJsonArray([
       ]
     }
   ],
-  "inputsInline": false,
-  "output": "type",
+  "output": null,
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
