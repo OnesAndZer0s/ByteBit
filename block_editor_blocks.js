@@ -176,7 +176,8 @@ Blockly.defineBlocksWithJsonArray([
     },
     {
       "type": "input_value",
-      "name": "MUTATOR"
+      "name": "MUTATOR",
+      "check": "String"
     },
     {
       "type": "input_dummy",
