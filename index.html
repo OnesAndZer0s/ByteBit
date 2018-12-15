@@ -380,7 +380,7 @@ window.onclick = function(e) {
   main.render();
   main.setDeletable(false);
   main.setMovable(false);
-  var type = main.workspace.newBlock('type_null');
+  var type = main.workspace.newBlock('text');
   type.setDeletable(false);
   type.setMovable(false);
   type.outputConnection.connect(main.getInput("TOOLTIP").connection);
