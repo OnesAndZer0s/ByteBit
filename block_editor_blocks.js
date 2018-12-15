@@ -88,11 +88,6 @@ var mixin = {/**
         var input = this.appendStatementInput('FIELD' + i);
         if (this.itemCount_[i].type.split('_')[1] !== "blank") {
         console.log(this);
-        var typeselect = this.workspace.newBlock('type_select');
-        typeselect.setDeletable(false);
-        typeselect.setMovable(false); typeselect.outputConnection.connect(this.getInput("INFO" + i).connection);
-        typeselect.initSvg();
-        typeselect.render();
         }
     }
     // Remove deleted inputs.
