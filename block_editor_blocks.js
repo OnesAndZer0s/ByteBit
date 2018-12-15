@@ -34,7 +34,6 @@ var mixin = {/**
       connection = itemBlock.nextConnection;
     }
     return containerBlock;
-    alert('test');
   },
   /**
    * Reconfigure this block based on the mutator dialog's components.
@@ -51,6 +50,7 @@ var mixin = {/**
     }
  this.itemCount_ = connections;
     this.updateShape_();
+        alert("test");
     },
   /**
    * Store pointers to any connected child blocks.
