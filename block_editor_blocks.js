@@ -34,6 +34,7 @@ var mixin = {/**
       connection = itemBlock.nextConnection;
     }
     return containerBlock;
+    alert('test');
   },
   /**
    * Reconfigure this block based on the mutator dialog's components.
