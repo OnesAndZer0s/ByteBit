@@ -380,6 +380,12 @@ window.onclick = function(e) {
   main.render();
   main.setDeletable(false);
   main.setMovable(false);
+  var type = main.workspace.newBlock('type_null');
+  type.setDeletable(false);
+  type.setMovable(false);
+  type.outputConnection.connect(main.getInput("TOOLTIP").connection);
+  type.initSvg();
+  type.render();
 </script>
   </body>
 </html>
