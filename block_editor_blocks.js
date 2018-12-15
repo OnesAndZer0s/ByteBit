@@ -50,7 +50,7 @@ var mixin = {/**
     }
  this.itemCount_ = connections;
     this.updateShape_();
-        alert(connections);
+        console.log(connections);
     },
   /**
    * Store pointers to any connected child blocks.
