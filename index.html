@@ -380,12 +380,30 @@ window.onclick = function(e) {
   main.render();
   main.setDeletable(false);
   main.setMovable(false);
-  var type = main.workspace.newBlock('text');
-  type.setDeletable(false);
-  type.setMovable(false);
-  type.outputConnection.connect(main.getInput("TOOLTIP").connection);
-  type.initSvg();
-  type.render();
+  var tooltxt = main.workspace.newBlock('text');
+  tooltxt.setDeletable(false);
+  tooltxt.setMovable(false);
+  tooltxt.outputConnection.connect(main.getInput("TOOLTIP").connection);
+  tooltxt.initSvg();
+  tooltxt.render();
+  var helptxt = main.workspace.newBlock('text');
+  helptxt.setDeletable(false);
+  helptxt.setMovable(false);
+  helptxt.outputConnection.connect(main.getInput("HELPURL").connection);
+  helptxt.initSvg();
+  helptxt.render();
+  var colorblock = main.workspace.newBlock('text');
+  colorblock.setDeletable(false);
+  colorblock.setMovable(false);
+  colorblock.outputConnection.connect(main.getInput("COLOR").connection);
+  colorblock.initSvg();
+  colorblock.render();
+  var mutatortxt = main.workspace.newBlock('text');
+  mutatortxt.setDeletable(false);
+  mutatortxt.setMovable(false);
+  mutatortxt.outputConnection.connect(main.getInput("MUTATOR").connection);
+  mutatortxt.initSvg();
+  mutatortxt.render();
 </script>
   </body>
 </html>
