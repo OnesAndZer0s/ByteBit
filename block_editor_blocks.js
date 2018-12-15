@@ -579,7 +579,7 @@ Blockly.defineBlocksWithJsonArray([
   "type": "type_any_of",
   "message0": "MENUMUTATOR",
   "inputsInline": false,
-  "output": null,
+  "output": "type",
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
@@ -620,7 +620,7 @@ Blockly.defineBlocksWithJsonArray([
     }
   ],
   "inputsInline": false,
-  "output": null,
+  "output": "type",
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
