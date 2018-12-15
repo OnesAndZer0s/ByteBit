@@ -656,7 +656,7 @@ Blockly.defineBlocksWithJsonArray([
     }
   ],
   "inputsInline": false,
-  "output": null,
+  "output": "type",
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
