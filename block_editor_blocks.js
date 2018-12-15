@@ -183,7 +183,7 @@ Blockly.defineBlocksWithJsonArray([
       "name": "EMPTY"
     }
   ],
-  "colour": 135,
+  "colour": "#222222",
   "mutator": "creator_inputs",
   "tooltip": "",
   "helpUrl": ""
