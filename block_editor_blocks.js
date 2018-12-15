@@ -627,40 +627,42 @@ Blockly.defineBlocksWithJsonArray([
 },
 {
   "type": "color_select",
-  "message0": "RGB %1 %2 %3",
+  "message0": "color %1 %2",
   "args0": [
     {
-      "type": "field_number",
-      "name": "R",
-      "value": 0,
-      "min": 0,
-      "max": 255
+      "type": "field_dropdown",
+      "name": "TYPE",
+      "options": [
+        [
+          "hex",
+          "hex"
+        ],
+        [
+          "RGB",
+          "RGB"
+        ],
+        [
+          "HSL",
+          "HSL"
+        ],
+        [
+          "picker",
+          "picker"
+        ]
+      ]
     },
     {
-      "type": "field_number",
-      "name": "G",
-      "value": 0,
-      "min": 0,
-      "max": 255
-    },
-    {
-      "type": "field_number",
-      "name": "B",
-      "value": 0,
-      "min": 0,
-      "max": 255
+      "type": "field_input",
+      "name": "HEX",
+      "text": ""
     }
   ],
-  "output": "color",
+  "inputsInline": false,
+  "output": null,
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
 }
-  ],
-  "output": "color",
-  "colour": 230,
-  "tooltip": "",
-  "helpUrl": ""
 }])
 
 Blockly.JavaScript['block_creator'] = function(block) {
