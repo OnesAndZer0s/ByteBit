@@ -16,6 +16,7 @@ var mixin = {/**
   domToMutation: function(xmlElement) {
     this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
     this.updateShape_();
+    console.log(this.itemCount_);
   },
   /**
    * Populate the mutator's dialog with this block's components.
@@ -26,9 +27,8 @@ var mixin = {/**
   decompose: function(workspace) {
     var containerBlock = workspace.newBlock('creator_mutation_input');
     containerBlock.initSvg();
-    var connection = this.itemCount_;
-    for (var i = 0; i < connection.length; i++) {
-      var itemBlock = workspace.newBlock(connection[i]);
+    for (var i = 0; i < this.itemCount_.length; i++) {
+      var itemBlock = workspace.newBlock(this.itemCount_[i]);
       itemBlock.initSvg();
       containerBlock.connect(itemBlock.previousConnection);
     }
