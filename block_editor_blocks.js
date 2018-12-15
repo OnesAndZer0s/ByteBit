@@ -84,6 +84,11 @@ var mixin = {/**
         var input = this.appendStatementInput('FIELD' + i);
         input.appendField(this.itemCount_[i] + '');
     }
+    // Remove deleted inputs.
+     while (this.getInput('FIELD' + i)) {
+       this.removeInput('FIELD' + i);
+       i++;
+     }
 }
 };
 Blockly.Extensions.registerMutator('creator_inputs', mixin, null, ['creator_blank_line','creator_value_line','creator_statement_line']);
