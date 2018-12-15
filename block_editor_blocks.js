@@ -33,7 +33,6 @@ var mixin = {/**
       connection.connect(itemBlock.previousConnection);
       connection = itemBlock.nextConnection;
     }
-            alert("decomp");
     return containerBlock;
   },
   /**
@@ -51,7 +50,7 @@ var mixin = {/**
     }
  this.itemCount_ = connections;
     this.updateShape_();
-        alert("comp");
+        alert(connections);
     },
   /**
    * Store pointers to any connected child blocks.
