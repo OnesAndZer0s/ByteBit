@@ -662,8 +662,7 @@ Blockly.defineBlocksWithJsonArray([
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
-}
-}])
+}]);
 
 Blockly.JavaScript['block_creator'] = function(block) {
   var text_blockname = block.getFieldValue('BLOCKNAME');
