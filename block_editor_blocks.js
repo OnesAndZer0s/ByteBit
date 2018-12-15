@@ -81,11 +81,15 @@ var mixin = {/**
     for (var i = 0; i < this.itemCount_.length; i++) {
         console.log(this.getInput('FIELD' + i));
        if (this.getInput('FIELD' + i) !== null) {this.removeInput('FIELD' + i);}
+        if (this.itemCount_[i].type.split('_')[0] !== 'blank') {
+        var info = this.appendValueInput('INFO' + i);} else {
+        var info = this.appendDummyInput('INFO' + i);}
+        info.appendField(this.itemCount_[i] + '');
         var input = this.appendStatementInput('FIELD' + i);
-        input.appendField(this.itemCount_[i] + '');
     }
     // Remove deleted inputs.
      while (this.getInput('FIELD' + i)) {
+       this.removeInput('INFO' + i);
        this.removeInput('FIELD' + i);
        i++;
      }
