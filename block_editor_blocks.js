@@ -28,10 +28,9 @@ var mixin = {/**
     containerBlock.initSvg();
     var connection = this.itemCount_;
     for (var i = 0; i < connection.length; i++) {
-      var itemBlock = workspace.newBlock(connection);
+      var itemBlock = workspace.newBlock(connection[i]);
       itemBlock.initSvg();
-      connection.connect(itemBlock.previousConnection);
-      connection = itemBlock.nextConnection;
+      containerBlock.connect(itemBlock.previousConnection);
     }
     return containerBlock;
   },
