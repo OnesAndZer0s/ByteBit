@@ -14,9 +14,7 @@ var mixin = {/**
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-    this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
     this.updateShape_();
-    console.log(this.itemCount_);
   },
   /**
    * Populate the mutator's dialog with this block's components.
@@ -25,6 +23,7 @@ var mixin = {/**
    * @this Blockly.Block
    */
   decompose: function(workspace) {
+    console.log(this.itemBlock);
     var containerBlock = workspace.newBlock('creator_mutation_input');
     containerBlock.initSvg();
     for (var i = 0; i < 0; i++) {
@@ -49,7 +48,7 @@ var mixin = {/**
     }
  this.itemCount_ = connections;
     this.updateShape_();
- console.log(this.itemCount_);
+ console.log(this.itemCount_ + '1');
     },
   /**
    * Store pointers to any connected child blocks.
