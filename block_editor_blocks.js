@@ -626,7 +626,7 @@ Blockly.defineBlocksWithJsonArray([
   "helpUrl": ""
 },
 {
-  "type": "color_rgb",
+  "type": "color_select",
   "message0": "RGB %1 %2 %3",
   "args0": [
     {
@@ -655,47 +655,7 @@ Blockly.defineBlocksWithJsonArray([
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
-},
-{
-  "type": "color_hex",
-  "message0": "hex %1",
-  "args0": [
-    {
-      "type": "field_input",
-      "name": "HEX",
-      "text": ""
-    }
-  ],
-  "output": "color",
-  "colour": 230,
-  "tooltip": "",
-  "helpUrl": ""
-},
-{
-  "type": "color_hsl",
-  "message0": "HSL %1 %2 %3",
-  "args0": [
-    {
-      "type": "field_number",
-      "name": "H",
-      "value": 0,
-      "min": 0,
-      "max": 360
-    },
-    {
-      "type": "field_number",
-      "name": "S",
-      "value": 0,
-      "min": 0,
-      "max": 100
-    },
-    {
-      "type": "field_number",
-      "name": "L",
-      "value": 0,
-      "min": 0,
-      "max": 100
-    }
+}
   ],
   "output": "color",
   "colour": 230,
