@@ -27,7 +27,7 @@ var mixin = {/**
   decompose: function(workspace) {
     var containerBlock = workspace.newBlock('creator_mutation_input');
     containerBlock.initSvg();
-    for (var i = 0; i < this.itemCount_.length; i++) {
+    for (var i = 0; i < 0; i++) {
       var itemBlock = workspace.newBlock(this.itemCount_[i]);
       itemBlock.initSvg();
       containerBlock.connect(itemBlock.previousConnection);
