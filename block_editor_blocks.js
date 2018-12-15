@@ -91,7 +91,7 @@ var mixin = {/**
         var typeselect = this.workspace.newBlock('type_select');
         typeselect.setDeletable(false);
         typeselect.setMovable(false);
-        typeselect.outputConnection.connect(main.getInput("FIELD" + i).connection);
+        typeselect.outputConnection.connect(this.getInput("FIELD" + i).connection);
         typeselect.initSvg();
         typeselect.render();
         }
