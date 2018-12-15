@@ -79,15 +79,13 @@ var mixin = {/**
     }
     // Add new inputs.
     for (var i = 0; i < this.itemCount_.length; i++) {
-        console.log(this.getInput('FIELD' + i));
-       if (this.getInput('FIELD' + i) !== null) {this.removeInput('INFO' + i); this.removeInput('FIELD' + i);}
+      if (this.getInput('FIELD' + i) !== null) {this.removeInput('INFO' + i); this.removeInput('FIELD' + i);}
         if (this.itemCount_[i].type.split('_')[1] !== "blank") {
         var info = this.appendValueInput('INFO' + i);} else {
         var info = this.appendDummyInput('INFO' + i);}
         info.appendField(this.itemCount_[i] + '');
         var input = this.appendStatementInput('FIELD' + i);
         if (this.itemCount_[i].type.split('_')[1] !== "blank") {
-        console.log(this);
         var typeselect = this.workspace.newBlock('type_select');
         typeselect.setDeletable(false);
         typeselect.setMovable(false); 
@@ -98,10 +96,11 @@ var mixin = {/**
     }
     // Remove deleted inputs.
      while (this.getInput('FIELD' + i)) {
-       console.log(this.getInput('INFO' + i));
-       if (this.getInput('INFO' + i).type !== "dummy") {this.getInput('INFO' + i).connection}
+       console.log(this);
+       if (this.getInput('INFO' + i).type == 1) {this.getInput('INFO' + i).connection}
        this.removeInput('INFO' + i);
        this.removeInput('FIELD' + i);
+       console.log(this);
        i++;
      }
 }
