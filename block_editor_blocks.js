@@ -27,7 +27,7 @@ var mixin = {/**
     var containerBlock = workspace.newBlock('creator_mutation_input');
     containerBlock.initSvg();
     var connection = this.itemCount_;
-    for (var i = 0; i < connection.dbOpposite_.length; i++) {
+    for (var i = 0; i < connection.length; i++) {
       var itemBlock = workspace.newBlock(connection);
       itemBlock.initSvg();
       connection.connect(itemBlock.previousConnection);
