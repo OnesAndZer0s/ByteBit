@@ -28,7 +28,7 @@ var mixin = {/**
     containerBlock.initSvg();
     var connection = this.itemCount_;
     for (var i = 0; i < connection.dbOpposite_.length; i++) {
-      var itemBlock = workspace.newBlock(connection.dbOpposite_[i].sourceBlock_.type);
+      var itemBlock = workspace.newBlock(connection);
       itemBlock.initSvg();
       connection.connect(itemBlock.previousConnection);
       connection = itemBlock.nextConnection;
