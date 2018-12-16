@@ -81,17 +81,20 @@ var mixin = {/**
     for (var i = 0; i < this.itemCount_.length; i++) {
       if (this.getInput('FIELD' + i) !== null) {
         this.removeInput('INFO' + i); 
-        this.removeInput('FIELD' + i);}
         if (this.itemCount_[i].type.split('_')[1] !== "blank") {
-        //dothing //
-        var info = this.appendValueInput('INFO' + i);} else {
-        var info = this.appendDummyInput('INFO' + i);}
+        this.removeInput('TYPE' + i); }
+        this.removeInput('FIELD' + i);}
+        var info = this.appendDummyInput('INFO' + i);
         info.appendField(this.itemCount_[i] + '');
+        if (this.itemCount_[i].type.split('_')[1] !== "blank") {
+        var type = this.appendDummyInput('TYPE' + i);}
         var input = this.appendStatementInput('FIELD' + i);
     }
     // Remove deleted inputs.
      while (this.getInput('FIELD' + i)) {
        this.removeInput('INFO' + i);
+       if (this.itemCount_[i].type.split('_')[1] !== "blank") {
+        this.removeInput('TYPE' + i); }
        this.removeInput('FIELD' + i);
        i++;
      }
