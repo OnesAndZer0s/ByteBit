@@ -92,7 +92,7 @@ var mixin = {/**
         if (this.itemCount_[i].type.split('_')[1] !== "blank") {
         var typeselect = this.workspace.newBlock('type_select');
         typeselect.setDeletable(false);
-        typeselect.setMovable(true); 
+        typeselect.setMovable(false); 
         typeselect.initSvg();
         typeselect.render();
         typeselect.outputConnection.connect(this.getInput("INFO" + i).connection);
