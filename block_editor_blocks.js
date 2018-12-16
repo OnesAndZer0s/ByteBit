@@ -80,7 +80,7 @@ var mixin = {/**
     // Add new inputs.
     for (var i = 0; i < this.itemCount_.length; i++) {
       if (this.getInput('FIELD' + i) !== null) {
-        if (this.getInput('INFO' + i).type == 1) {}
+        if (this.getInput('INFO' + i).type == 1) {this.childBlocks_[i+3].dispose();}
         this.removeInput('INFO' + i); 
         this.removeInput('FIELD' + i);}
         if (this.itemCount_[i].type.split('_')[1] !== "blank") {
@@ -100,8 +100,7 @@ var mixin = {/**
     // Remove deleted inputs.
      while (this.getInput('FIELD' + i)) {
        if (this.getInput('INFO' + i).type == 1) {
-         console.log(this.childBlocks_);
-         console.log(i);}
+         this.childBlocks_[i+3].dispose();}
        this.removeInput('INFO' + i);
        this.removeInput('FIELD' + i);
        i++;
