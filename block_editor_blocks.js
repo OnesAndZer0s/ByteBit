@@ -98,7 +98,7 @@ var mixin = {/**
      while (this.getInput('FIELD' + i)) {
        if (this.getInput('INFO' + i).type == 1) {
          console.log(this);
-         this.getInput('INFO' + i).sourceBlock_.childBlocks_[i+4].dispose();}
+         this.childBlocks_[i+4].dispose();}
        this.removeInput('INFO' + i);
        this.removeInput('FIELD' + i);
        i++;
