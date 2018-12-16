@@ -100,7 +100,7 @@ var mixin = {/**
     // Remove deleted inputs.
      while (this.getInput('FIELD' + i)) {
        if (this.getInput('INFO' + i).type == 1) {
-         this.childBlocks_[i+3].dispose();}
+         this.childBlocks_[i+4].dispose();}
        this.removeInput('INFO' + i);
        this.removeInput('FIELD' + i);
        i++;
