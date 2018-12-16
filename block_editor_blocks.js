@@ -81,7 +81,7 @@ var mixin = {/**
     for (var i = 0; i < this.itemCount_.length; i++) {
       if (this.getInput('FIELD' + i) !== null) {
         this.removeInput('INFO' + i); 
-        if (this.getInput('FIELD' + i) !== null) {
+        if (this.getInput('TYPE' + i) !== null) {
         this.removeInput('TYPE' + i); }
         this.removeInput('FIELD' + i);}
         var info = this.appendDummyInput('INFO' + i);
