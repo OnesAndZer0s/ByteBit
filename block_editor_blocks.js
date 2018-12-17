@@ -89,6 +89,7 @@ var mixin = {/**
         if (this.itemCount_[i].type.split('_')[1] !== "blank") {
         var type = this.appendDummyInput('TYPE' + i);
         type.appendField('type');
+        type.appendField(new Blockly.FieldLabel('-', 'test'));
         type.appendField(new Blockly.FieldTextInput('type'),'TYPE'+i+1);}
         var input = this.appendStatementInput('FIELD' + i);
     }
