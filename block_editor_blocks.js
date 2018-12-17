@@ -659,15 +659,20 @@ Blockly.defineBlocksWithJsonArray([
 }]);
 
 Blockly.JavaScript['block_creator'] = function(block) {
-  var text_blockname = block.getFieldValue('BLOCKNAME');
-  var dropdown_inputline = block.getFieldValue('INPUTLINE');
-  var dropdown_connections = block.getFieldValue('CONNECTIONS');
-  var value_tooltip = Blockly.JavaScript.valueToCode(block, 'TOOLTIP', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_helpurl = Blockly.JavaScript.valueToCode(block, 'HELPURL', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_color = Blockly.JavaScript.valueToCode(block, 'COLOR', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_mutator = Blockly.JavaScript.valueToCode(block, 'MUTATOR', Blockly.JavaScript.ORDER_ATOMIC);
+  var blockName = block.getFieldValue('BLOCKNAME');
+  var inputLine = block.getFieldValue('INPUTLINE');
+  var connectionType = block.getFieldValue('CONNECTIONS');
+  var tooltip = Blockly.JavaScript.valueToCode(block, 'TOOLTIP', Blockly.JavaScript.ORDER_ATOMIC);
+  var helpUrl = Blockly.JavaScript.valueToCode(block, 'HELPURL', Blockly.JavaScript.ORDER_ATOMIC);
+  var color = Blockly.JavaScript.valueToCode(block, 'COLOR', Blockly.JavaScript.ORDER_ATOMIC);
+  var mutator = Blockly.JavaScript.valueToCode(block, 'MUTATOR', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = ['{
+  "type": '+blockName+',
+  "message0": "",
+  "colour": 'color',
+  "tooltip": 'tooltip',
+  "helpUrl": 'helpUrl'}',"Blockly.JavaScript["+blockName+"] = function(block) {}"];
   return code;
 };
 
