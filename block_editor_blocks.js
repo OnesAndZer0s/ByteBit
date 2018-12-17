@@ -667,12 +667,7 @@ Blockly.JavaScript['block_creator'] = function(block) {
   var color = Blockly.JavaScript.valueToCode(block, 'COLOR', Blockly.JavaScript.ORDER_ATOMIC);
   var mutator = Blockly.JavaScript.valueToCode(block, 'MUTATOR', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = ['{
-  "type": '+blockName+',
-  "message0": "",
-  "colour": 'color',
-  "tooltip": 'tooltip',
-  "helpUrl": 'helpUrl'}',"Blockly.JavaScript["+blockName+"] = function(block) {}"];
+ var code = '...;\n';
   return code;
 };
 
