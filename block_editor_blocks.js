@@ -87,7 +87,8 @@ var mixin = {/**
         var info = this.appendDummyInput('INFO' + i);
         info.appendField(this.itemCount_[i] + '');
         if (this.itemCount_[i].type.split('_')[1] !== "blank") {
-        var type = this.appendDummyInput('TYPE' + i);}
+        var type = this.appendDummyInput('TYPE' + i);
+        type.appendField(new Blockly.FieldDropdown([['left', 'left'],['right', 'right'],['center', 'center']]),'TYPEDROP'+i);}
         var input = this.appendStatementInput('FIELD' + i);
     }
     // Remove deleted inputs.
