@@ -6,6 +6,7 @@ var mixin = {/**
   mutationToDom: function() {
     var container = document.createElement('mutation');
     container.setAttribute('items', this.itemCount_);
+    alert('test');
     return container;
   },
   /**
