@@ -90,7 +90,8 @@ var mixin = {/**
         var type = this.appendDummyInput('TYPE' + i);
         type.appendField(new Blockly.FieldNumber('1'), 'ammount');
         type.appendField('type');
-        type.appendField(new Blockly.FieldTextInput('type'), 'TYPEARRAY'+i);}
+        type.appendField(new Blockly.FieldTextInput('type'), 'TYPEARRAY'+i);
+        type.appendField('EXTENTIONHERE');}
         var input = this.appendStatementInput('FIELD' + i);
     }
     // Remove deleted inputs.
