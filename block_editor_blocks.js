@@ -88,9 +88,9 @@ var mixin = {/**
         info.appendField(this.itemCount_[i] + '');
         if (this.itemCount_[i].type.split('_')[1] !== "blank") {
         var type = this.appendDummyInput('TYPE' + i);
+        type.appendField(new Blockly.FieldNumber('1'), 'ammount');
         type.appendField('type');
-        type.appendField(new Blockly.FieldLabel('-', 'test'));
-        type.appendField(new Blockly.FieldTextInput('type'),'TYPE'+i+1);}
+        type.appendField(new Blockly.FieldTextInput('type'), 'TYPEARRAY'+i);}
         var input = this.appendStatementInput('FIELD' + i);
     }
     // Remove deleted inputs.
