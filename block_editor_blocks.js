@@ -6,7 +6,6 @@ var mixin = {/**
   mutationToDom: function() {
     var container = document.createElement('mutation');
     container.setAttribute('items', this.itemCount_);
-    alert('mtd');
     return container;
   },
   /**
@@ -15,7 +14,6 @@ var mixin = {/**
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-    alert('dtm');
     this.updateShape_();
   },
   /**
